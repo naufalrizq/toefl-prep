@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://toefl-prep/api/schemas/report.json",
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+    "data": {
+      "type": "object",
+      "required": ["attempt", "report", "items"],
+      "properties": {
+        "attempt": {
+          "type": "object",
+          "required": ["id", "status", "score_pct", "finished_at"],
+          "properties": {
+            "id": { "type": "integer" },
+            "user_id": { "type": "integer" },
+            "exam_template_id": { "type": "integer" },
+            "exam_title": { "type": "string" },
+            "mode": { "type": "string" },
+            "started_at": { "type": "string" },
+            "finished_at": { "type": ["string", "null"] },
+            "status": { "type": "string", "enum": ["submitted"] },
+            "score_pct": { "type": ["integer", "null"] }
+          }
+        },
+        "report": {
+          "type": "object",
+          "required": ["score_pct", "correct", "wrong", "unanswered", "total", "sections", "worst_pos"],
+          "properties": {
+            "score_pct": { "type": "integer" },
+            "correct": { "type": "integer" },
+            "wrong": { "type": "integer" },
+            "unanswered": { "type": "integer" },
+            "total": { "type": "integer" },
+            "sections": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["section", "correct", "total", "score_pct"],
+                "properties": {
+                  "section": { "type": "string" },
+                  "correct": { "type": "integer" },
+                  "total": { "type": "integer" },
+                  "score_pct": { "type": "integer" }
+                }
+              }
+            },
+            "worst_pos": { "type": "string" }
+          }
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "section", "question_text", "options", "correct_index", "is_correct", "is_unanswered", "explanation"],
+            "properties": {
+              "id": { "type": "integer" },
+              "section": { "type": "string" },
+              "type": { "type": "string" },
+              "question_text": { "type": "string" },
+              "options": { "type": "array", "items": { "type": "string" } },
+              "correct_index": { "type": "integer" },
+              "chosen_index": { "type": ["integer", "null"] },
+              "is_correct": { "type": "boolean" },
+              "is_unanswered": { "type": "boolean" },
+              "explanation": { "type": "string" },
+              "highlight_regions": { "type": "array" },
+              "time_taken_ms": { "type": ["integer", "null"] },
+              "flagged": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

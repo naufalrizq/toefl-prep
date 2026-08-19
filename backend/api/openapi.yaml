@@ -1,0 +1,1024 @@
+openapi: 3.0.3
+info:
+  title: TOEFL Prep API
+  version: 1.0.0
+  description: >
+    Backend contract for the TOEFL Prep quiz app (see docs/SRS.md §8).
+    All responses use an envelope: `{"data": ...}` on success or
+    `{"error": {"code", "message"}}` on failure. Auth is cookie-based:
+    `toefl_session` (httpOnly) + `toefl_csrf` (double-submit; mutations must
+    echo it in the `X-CSRF-Token` header). Error codes: auth_required,
+    forbidden, not_found, conflict, validation_failed, rate_limited, internal.
+servers:
+  - url: /api/v1
+tags:
+  - name: health
+  - name: auth
+  - name: exams
+  - name: attempts
+  - name: dashboard
+  - name: admin
+paths:
+  /health:
+    get:
+      tags: [health]
+      summary: Liveness probe
+      security: []
+      responses:
+        "200":
+          description: Service is up
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Health"
+
+  /auth/login:
+    post:
+      tags: [auth]
+      summary: Exchange credentials for session + csrf cookies
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginBody"
+      responses:
+        "200":
+          description: Logged in; sets toefl_session and toefl_csrf cookies
+          headers:
+            Set-Cookie:
+              description: toefl_session (httpOnly) and toefl_csrf
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+        "422":
+          $ref: "#/components/responses/Validation"
+
+  /auth/me:
+    get:
+      tags: [auth]
+      summary: Current user
+      responses:
+        "200":
+          description: Authenticated user
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /auth/logout:
+    post:
+      tags: [auth]
+      summary: Invalidate session and clear cookies
+      responses:
+        "204":
+          description: Cleared
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /exams:
+    get:
+      tags: [exams]
+      summary: List exam templates (students see only published/active)
+      responses:
+        "200":
+          description: Exam templates
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ExamTemplate"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+    post:
+      tags: [admin]
+      summary: Create exam template (admin)
+      security:
+        - cookieAuth: []
+        - csrfHeader: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ExamTemplateInput"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExamTemplate"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "422":
+          $ref: "#/components/responses/Validation"
+
+  /exams/{id}:
+    put:
+      tags: [admin]
+      summary: Update exam template (admin)
+      security:
+        - cookieAuth: []
+        - csrfHeader: []
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ExamTemplateInput"
+      responses:
+        "200":
+          $ref: "#/components/responses/ExamTemplate"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "422":
+          $ref: "#/components/responses/Validation"
+    delete:
+      tags: [admin]
+      summary: Soft-delete exam template (admin)
+      security:
+        - cookieAuth: []
+        - csrfHeader: []
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      responses:
+        "204":
+          description: Deleted
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /exams/{id}/publish:
+    post:
+      tags: [admin]
+      summary: Publish/unpublish exam template (admin)
+      security:
+        - cookieAuth: []
+        - csrfHeader: []
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [published]
+              properties:
+                published:
+                  type: boolean
+      responses:
+        "204":
+          description: Toggled
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "422":
+          $ref: "#/components/responses/Validation"
+
+  /attempts:
+    get:
+      tags: [attempts]
+      summary: List the caller's attempts (newest first, max 50)
+      responses:
+        "200":
+          description: Attempts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Attempt"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+    post:
+      tags: [attempts]
+      summary: Start an attempt, snapshotting random questions (FR-4.1)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/StartBody"
+      responses:
+        "201":
+          description: Attempt started with quiz items (answers stripped)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StartResult"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          $ref: "#/components/responses/Conflict"
+        "422":
+          $ref: "#/components/responses/Validation"
+
+  /attempts/{id}/questions:
+    get:
+      tags: [attempts]
+      summary: Resume quiz items for an in-progress attempt
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      responses:
+        "200":
+          description: Quiz items
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/QuizItem"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /attempts/{id}/answers/{item_id}:
+    put:
+      tags: [attempts]
+      summary: Record an answer (chosen_index null clears it)
+      parameters:
+        - $ref: "#/components/parameters/Id"
+        - $ref: "#/components/parameters/ItemId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AnswerBody"
+      responses:
+        "204":
+          description: Recorded
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          $ref: "#/components/responses/Conflict"
+        "422":
+          $ref: "#/components/responses/Validation"
+
+  /attempts/{id}/flag/{item_id}:
+    put:
+      tags: [attempts]
+      summary: Toggle the flag on a question
+      parameters:
+        - $ref: "#/components/parameters/Id"
+        - $ref: "#/components/parameters/ItemId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [flagged]
+              properties:
+                flagged:
+                  type: boolean
+      responses:
+        "204":
+          description: Toggled
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          $ref: "#/components/responses/Conflict"
+
+  /attempts/{id}/submit:
+    post:
+      tags: [attempts]
+      summary: Finalize the attempt and grade it server-side (FR-4.4)
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      responses:
+        "200":
+          description: Report with review items
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Report"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /attempts/{id}/review:
+    get:
+      tags: [attempts]
+      summary: Full review of a submitted attempt (FR-6.1)
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      responses:
+        "200":
+          description: Review
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Review"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "409":
+          $ref: "#/components/responses/Conflict"
+
+  /dashboard/stats:
+    get:
+      tags: [dashboard]
+      summary: Aggregated progress for the caller (PRD dashboard)
+      responses:
+        "200":
+          description: Stats
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DashboardStats"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /questions:
+    get:
+      tags: [admin]
+      summary: List/filter questions (admin)
+      security:
+        - cookieAuth: []
+        - csrfHeader: []
+      parameters:
+        - name: section
+          in: query
+          schema:
+            type: string
+            enum: [structure, vocabulary]
+        - name: type
+          in: query
+          schema:
+            type: string
+        - name: difficulty
+          in: query
+          schema:
+            type: string
+            enum: [easy, medium, hard]
+        - name: search
+          in: query
+          schema:
+            type: string
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            maximum: 100
+      responses:
+        "200":
+          description: Paged questions
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/QuestionPage"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+    post:
+      tags: [admin]
+      summary: Create a question (admin)
+      security:
+        - cookieAuth: []
+        - csrfHeader: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Question"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Question"
+        "422":
+          $ref: "#/components/responses/Validation"
+
+  /questions/{id}:
+    get:
+      tags: [admin]
+      summary: Get one question (admin)
+      security:
+        - cookieAuth: []
+        - csrfHeader: []
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      responses:
+        "200":
+          $ref: "#/components/responses/Question"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    put:
+      tags: [admin]
+      summary: Update a question (admin)
+      security:
+        - cookieAuth: []
+        - csrfHeader: []
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Question"
+      responses:
+        "200":
+          $ref: "#/components/responses/Question"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "422":
+          $ref: "#/components/responses/Validation"
+    delete:
+      tags: [admin]
+      summary: Soft-delete a question (admin)
+      security:
+        - cookieAuth: []
+        - csrfHeader: []
+      parameters:
+        - $ref: "#/components/parameters/Id"
+      responses:
+        "204":
+          description: Deleted
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /questions/import:
+    post:
+      tags: [admin]
+      summary: Validate AI-generated draft questions without persisting (FR-2.8)
+      security:
+        - cookieAuth: []
+        - csrfHeader: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: "#/components/schemas/Draft"
+                - type: array
+                  items:
+                    $ref: "#/components/schemas/Draft"
+      responses:
+        "200":
+          description: Per-draft validation results
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data]
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/ImportResult"
+        "422":
+          $ref: "#/components/responses/Validation"
+
+  /seed:
+    post:
+      tags: [admin]
+      summary: Upsert the embedded seed question bank (admin, FR-2.8)
+      security:
+        - cookieAuth: []
+        - csrfHeader: []
+      responses:
+        "200":
+          description: Seeded count
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  seeded:
+                    type: integer
+        "403":
+          $ref: "#/components/responses/Forbidden"
+
+components:
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: toefl_session
+    csrfHeader:
+      type: apiKey
+      in: header
+      name: X-CSRF-Token
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+        minimum: 1
+    ItemId:
+      name: item_id
+      in: path
+      required: true
+      schema:
+        type: integer
+        minimum: 1
+  responses:
+    Unauthorized:
+      description: Missing or expired session
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    Forbidden:
+      description: Role not permitted, or CSRF mismatch
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    Conflict:
+      description: State conflict (duplicate in-progress attempt, submitted attempt)
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    Validation:
+      description: Unprocessable input
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    RateLimited:
+      description: Too many attempts
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    Question:
+      description: A question
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Question"
+    ExamTemplate:
+      description: An exam template
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ExamTemplate"
+  schemas:
+    Error:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: object
+          required: [code, message]
+          properties:
+            code:
+              type: string
+              enum: [auth_required, forbidden, not_found, conflict, validation_failed, rate_limited, internal]
+            message:
+              type: string
+    Health:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            status:
+              type: string
+              example: ok
+    LoginBody:
+      type: object
+      required: [email, password]
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+    User:
+      type: object
+      required: [id, email, role]
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+        role:
+          type: string
+          enum: [student, admin]
+    HighlightRegion:
+      type: object
+      required: [start, end, pos]
+      properties:
+        start:
+          type: integer
+          minimum: 0
+        end:
+          type: integer
+        pos:
+          type: string
+          enum: [verb, noun, pronoun, adjective, adverb, preposition, conjunction, determiner, other]
+        label:
+          type: string
+    Question:
+      type: object
+      required:
+        - section
+        - type
+        - question_text
+        - options
+        - correct_index
+        - explanation
+        - difficulty
+        - active
+      properties:
+        id:
+          type: integer
+        section:
+          type: string
+          enum: [structure, vocabulary]
+        type:
+          type: string
+          enum: [sentence-completion, vocab-multiple-choice]
+        question_text:
+          type: string
+        options:
+          type: array
+          minItems: 4
+          maxItems: 4
+          items:
+            type: string
+        correct_index:
+          type: integer
+          minimum: 0
+          maximum: 3
+        explanation:
+          type: string
+        highlight_regions:
+          type: array
+          items:
+            $ref: "#/components/schemas/HighlightRegion"
+        difficulty:
+          type: string
+          enum: [easy, medium, hard]
+        active:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+    Draft:
+      type: object
+      description: AI output contract (prompts/question-generator.md)
+      required: [section, question_text, options, correct_index, explanation]
+      properties:
+        section:
+          type: string
+        type:
+          type: string
+        difficulty:
+          type: string
+        question_text:
+          type: string
+        options:
+          type: array
+          items:
+            type: string
+        correct_index:
+          type: integer
+        explanation:
+          type: string
+        highlights:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: string
+    ImportResult:
+      type: object
+      required: [index, valid]
+      properties:
+        index:
+          type: integer
+        valid:
+          type: boolean
+        error:
+          type: string
+        question:
+          $ref: "#/components/schemas/Question"
+    QuestionPage:
+      type: object
+      required: [items, page, limit, total]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/Question"
+        page:
+          type: integer
+        limit:
+          type: integer
+        total:
+          type: integer
+    ExamTemplateInput:
+      type: object
+      required: [title, section_filters, mode]
+      properties:
+        title:
+          type: string
+        section_filters:
+          type: object
+          additionalProperties:
+            type: integer
+            minimum: 1
+        shuffle:
+          type: boolean
+          default: true
+        mode:
+          type: string
+          enum: [per_question, overall, both]
+        seconds_per_question:
+          type: integer
+          minimum: 10
+        total_minutes:
+          type: integer
+          minimum: 1
+    ExamTemplate:
+      allOf:
+        - $ref: "#/components/schemas/ExamTemplateInput"
+        - type: object
+          required: [id, published, active, created_at, updated_at]
+          properties:
+            id:
+              type: integer
+            published:
+              type: boolean
+            active:
+              type: boolean
+            created_at:
+              type: string
+              format: date-time
+            updated_at:
+              type: string
+              format: date-time
+    StartBody:
+      type: object
+      required: [exam_template_id, mode]
+      properties:
+        exam_template_id:
+          type: integer
+        mode:
+          type: string
+          enum: [per_question, overall]
+    Attempt:
+      type: object
+      required: [id, user_id, exam_template_id, mode, started_at, status]
+      properties:
+        id:
+          type: integer
+        user_id:
+          type: integer
+        exam_template_id:
+          type: integer
+        exam_title:
+          type: string
+        mode:
+          type: string
+          enum: [per_question, overall]
+        started_at:
+          type: string
+          format: date-time
+        finished_at:
+          type: string
+          format: date-time
+        status:
+          type: string
+          enum: [in_progress, submitted]
+        score_pct:
+          type: integer
+        deadline:
+          type: string
+          format: date-time
+        summary:
+          type: object
+          additionalProperties: true
+    QuizItem:
+      type: object
+      required: [id, question_snapshot, flagged]
+      properties:
+        id:
+          type: integer
+        question_snapshot:
+          type: object
+          required: [question_text, options, highlight_regions, section, type]
+          properties:
+            question_text:
+              type: string
+            options:
+              type: array
+              items:
+                type: string
+            explanation:
+              description: always empty in quiz payloads (answers stripped)
+              type: string
+            highlight_regions:
+              type: array
+              items:
+                $ref: "#/components/schemas/HighlightRegion"
+            section:
+              type: string
+            type:
+              type: string
+        flagged:
+          type: boolean
+    StartResult:
+      type: object
+      required: [attempt, items]
+      properties:
+        attempt:
+          $ref: "#/components/schemas/Attempt"
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/QuizItem"
+    AnswerBody:
+      type: object
+      properties:
+        chosen_index:
+          type: integer
+          minimum: 0
+          maximum: 3
+          nullable: true
+        time_taken_ms:
+          type: integer
+          nullable: true
+    SectionReport:
+      type: object
+      required: [section, correct, total, score_pct]
+      properties:
+        section:
+          type: string
+        correct:
+          type: integer
+        total:
+          type: integer
+        score_pct:
+          type: integer
+    Report:
+      type: object
+      required: [attempt, report, items]
+      properties:
+        attempt:
+          $ref: "#/components/schemas/Attempt"
+        report:
+          $ref: "#/components/schemas/ScoreReport"
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/ReviewItem"
+    Review:
+      type: object
+      required: [attempt, report, items]
+      properties:
+        attempt:
+          $ref: "#/components/schemas/Attempt"
+        report:
+          $ref: "#/components/schemas/ScoreReport"
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/ReviewItem"
+    ScoreReport:
+      type: object
+      required: [score_pct, correct, wrong, unanswered, total, sections, worst_pos]
+      properties:
+        score_pct:
+          type: integer
+        correct:
+          type: integer
+        wrong:
+          type: integer
+        unanswered:
+          type: integer
+        total:
+          type: integer
+        sections:
+          type: array
+          items:
+            $ref: "#/components/schemas/SectionReport"
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              is_correct:
+                type: boolean
+              is_unanswered:
+                type: boolean
+        worst_pos:
+          type: string
+    ReviewItem:
+      type: object
+      required: [id, section, question_text, options, correct_index, is_correct, is_unanswered, explanation]
+      properties:
+        id:
+          type: integer
+        section:
+          type: string
+        type:
+          type: string
+        question_text:
+          type: string
+        options:
+          type: array
+          items:
+            type: string
+        correct_index:
+          type: integer
+        chosen_index:
+          type: integer
+          nullable: true
+        is_correct:
+          type: boolean
+        is_unanswered:
+          type: boolean
+        explanation:
+          type: string
+        highlight_regions:
+          type: array
+          items:
+            $ref: "#/components/schemas/HighlightRegion"
+        time_taken_ms:
+          type: integer
+          nullable: true
+        flagged:
+          type: boolean
+    DashboardStats:
+      type: object
+      required: [total_attempts, series, sections, worst_pos]
+      properties:
+        total_attempts:
+          type: integer
+        average_score:
+          type: integer
+        best_score:
+          type: integer
+        trend:
+          description: last-5 average minus previous-5 average, in points
+          type: integer
+        series:
+          type: array
+          items:
+            type: object
+            required: [id, score_pct, started_at]
+            properties:
+              id:
+                type: integer
+              score_pct:
+                type: integer
+              started_at:
+                type: string
+                format: date-time
+        sections:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              correct:
+                type: integer
+              total:
+                type: integer
+              accuracy:
+                type: integer
+        worst_pos:
+          type: object
+          additionalProperties:
+            type: integer

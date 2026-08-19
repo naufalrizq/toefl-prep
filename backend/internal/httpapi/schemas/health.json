@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://toefl-prep/api/schemas/health.json",
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+    "data": {
+      "type": "object",
+      "required": ["status"],
+      "properties": { "status": { "type": "string" } }
+    }
+  },
+  "additionalProperties": false
+}

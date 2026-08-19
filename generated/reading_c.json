@@ -1,0 +1,82 @@
+[
+ {
+  "section": "reading",
+  "type": "reading-comprehension",
+  "difficulty": "easy",
+  "passage": "The Industrial Revolution, which began in Britain around the mid-eighteenth century, transformed economies that had been based on agriculture and handcrafts. New machines powered by steam allowed goods to be produced faster and more cheaply than ever before. Factories grew up near coal mines and rivers, and large numbers of people moved from rural villages to industrial cities in search of work. This urbanization changed society in fundamental ways: family life, housing, and daily routines were reshaped around the rhythm of the factory. Working conditions in the early factories were often harsh, with long hours and low pay, which eventually led to labor laws and the rise of trade unions. The revolution also accelerated the spread of railroads and steamships, shrinking distances and opening new markets around the world.",
+  "question_text": "What is the main idea of the passage?",
+  "options": [
+   "The Industrial Revolution reshaped economies, cities, and daily life.",
+   "Steam machines were invented only after 1900.",
+   "Factory workers in Britain were never organized.",
+   "The Industrial Revolution began in North America."
+  ],
+  "correct_index": 0,
+  "explanation": "A. Teks merangkum dampak revolusi industri: ekonomi, urbanisasi, kondisi kerja, dan transportasi. B, C, dan D bertentangan dengan isi.",
+  "highlights": {}
+ },
+ {
+  "section": "reading",
+  "type": "reading-comprehension",
+  "difficulty": "easy",
+  "passage": "The Industrial Revolution, which began in Britain around the mid-eighteenth century, transformed economies that had been based on agriculture and handcrafts. New machines powered by steam allowed goods to be produced faster and more cheaply than ever before. Factories grew up near coal mines and rivers, and large numbers of people moved from rural villages to industrial cities in search of work. This urbanization changed society in fundamental ways: family life, housing, and daily routines were reshaped around the rhythm of the factory. Working conditions in the early factories were often harsh, with long hours and low pay, which eventually led to labor laws and the rise of trade unions. The revolution also accelerated the spread of railroads and steamships, shrinking distances and opening new markets around the world.",
+  "question_text": "What powered the new machines of the Industrial Revolution?",
+  "options": [
+   "steam",
+   "electricity",
+   "solar energy",
+   "animal labor"
+  ],
+  "correct_index": 0,
+  "explanation": "A. Teks bilang 'New machines powered by steam'. Listrik, tenaga surya, dan tenaga hewan nggak disebut.",
+  "highlights": {}
+ },
+ {
+  "section": "reading",
+  "type": "reading-comprehension",
+  "difficulty": "medium",
+  "passage": "The Industrial Revolution, which began in Britain around the mid-eighteenth century, transformed economies that had been based on agriculture and handcrafts. New machines powered by steam allowed goods to be produced faster and more cheaply than ever before. Factories grew up near coal mines and rivers, and large numbers of people moved from rural villages to industrial cities in search of work. This urbanization changed society in fundamental ways: family life, housing, and daily routines were reshaped around the rhythm of the factory. Working conditions in the early factories were often harsh, with long hours and low pay, which eventually led to labor laws and the rise of trade unions. The revolution also accelerated the spread of railroads and steamships, shrinking distances and opening new markets around the world.",
+  "question_text": "According to the passage, why did many people move to industrial cities?",
+  "options": [
+   "to search for work in the new factories",
+   "to escape the smoke of coal mines",
+   "to start farms near the rivers",
+   "to attend the new universities"
+  ],
+  "correct_index": 0,
+  "explanation": "A. Teks bilang orang pindah 'in search of work'. B, C, dan D nggak disebut.",
+  "highlights": {}
+ },
+ {
+  "section": "reading",
+  "type": "reading-comprehension",
+  "difficulty": "medium",
+  "passage": "The Industrial Revolution, which began in Britain around the mid-eighteenth century, transformed economies that had been based on agriculture and handcrafts. New machines powered by steam allowed goods to be produced faster and more cheaply than ever before. Factories grew up near coal mines and rivers, and large numbers of people moved from rural villages to industrial cities in search of work. This urbanization changed society in fundamental ways: family life, housing, and daily routines were reshaped around the rhythm of the factory. Working conditions in the early factories were often harsh, with long hours and low pay, which eventually led to labor laws and the rise of trade unions. The revolution also accelerated the spread of railroads and steamships, shrinking distances and opening new markets around the world.",
+  "question_text": "The word 'rural' in the passage is closest in meaning to:",
+  "options": [
+   "relating to the countryside",
+   "relating to factories",
+   "relating to money",
+   "relating to steam power"
+  ],
+  "correct_index": 0,
+  "explanation": "A. relating to the countryside. 'Rural villages' = desa di pedesaan, lawan dari 'industrial cities' yang disebut sesudahnya. Opsi lain nggak nyambung.",
+  "highlights": {}
+ },
+ {
+  "section": "reading",
+  "type": "reading-comprehension",
+  "difficulty": "hard",
+  "passage": "The Industrial Revolution, which began in Britain around the mid-eighteenth century, transformed economies that had been based on agriculture and handcrafts. New machines powered by steam allowed goods to be produced faster and more cheaply than ever before. Factories grew up near coal mines and rivers, and large numbers of people moved from rural villages to industrial cities in search of work. This urbanization changed society in fundamental ways: family life, housing, and daily routines were reshaped around the rhythm of the factory. Working conditions in the early factories were often harsh, with long hours and low pay, which eventually led to labor laws and the rise of trade unions. The revolution also accelerated the spread of railroads and steamships, shrinking distances and opening new markets around the world.",
+  "question_text": "It can be inferred from the passage that early factory workers ...",
+  "options": [
+   "faced difficult conditions that later improved through laws and unions.",
+   "received generous salaries from the first day.",
+   "worked only in rural areas.",
+   "invented the steam engine themselves."
+  ],
+  "correct_index": 0,
+  "explanation": "A. Teks bilang kondisi awal keras ('harsh, with long hours and low pay') lalu 'eventually led to labor laws and the rise of trade unions', jadi kondisi membaik lewat hukum dan serikat. B kebalikan, C dan D salah.",
+  "highlights": {}
+ }
+]

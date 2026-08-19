@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://toefl-prep/api/schemas/user.json",
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+    "data": {
+      "type": "object",
+      "required": ["id", "email", "role"],
+      "properties": {
+        "id": { "type": "integer" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["student", "admin"] }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

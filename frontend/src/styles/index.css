@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+
+  /* surfaces */
+  --paper: #faf9f6;
+  --card: #ffffff;
+  --card-muted: #f4f2ed;
+  --ink: #17181c;
+  --ink-muted: #5c5f66;
+  --ink-faint: #8b8e95;
+  --border: #e4e1da;
+  --border-strong: #c9c4ba;
+
+  /* brand + action */
+  --primary: #2563eb;
+  --on-primary: #ffffff;
+  --primary-soft: #dbeafe;
+
+  /* status */
+  --success: #16a34a;
+  --success-soft: #dcfce7;
+  --danger: #dc2626;
+  --danger-soft: #fee2e2;
+  --warning: #d97706;
+
+  /* POS highlights */
+  --pos-verb: #6d28d9;
+  --pos-noun: #1d4ed8;
+  --pos-pronoun: #be123c;
+  --pos-adjective: #15803d;
+  --pos-adverb: #b45309;
+  --pos-preposition: #0f766e;
+  --pos-conjunction: #4338ca;
+  --pos-determiner: #475569;
+  --pos-other: #6b7280;
+  --on-pos: #ffffff;
+}
+
+.dark {
+  color-scheme: dark;
+
+  /* surfaces */
+  --paper: #0e1013;
+  --card: #16191f;
+  --card-muted: #1e222a;
+  --ink: #e8eaed;
+  --ink-muted: #a3a8b0;
+  --ink-faint: #6d737c;
+  --border: #2a2f38;
+  --border-strong: #3d4450;
+
+  /* brand + action */
+  --primary: #4f8bff;
+  --on-primary: #ffffff;
+  --primary-soft: #1d3557;
+
+  /* status */
+  --success: #22c55e;
+  --success-soft: #14532d;
+  --danger: #ef4444;
+  --danger-soft: #7f1d1d;
+  --warning: #f59e0b;
+
+  /* POS highlights */
+  --pos-verb: #a78bfa;
+  --pos-noun: #60a5fa;
+  --pos-pronoun: #fb7185;
+  --pos-adjective: #4ade80;
+  --pos-adverb: #fbbf24;
+  --pos-preposition: #2dd4bf;
+  --pos-conjunction: #818cf8;
+  --pos-determiner: #94a3b8;
+  --pos-other: #9ca3af;
+  --on-pos: #0d0f12;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    margin: 0;
+  }
+  html,
+  body {
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+  button,
+  a,
+  [role='button'] {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+  .question-text {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+  .pos-chip {
+    border-radius: 999px;
+    padding: 0.125rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Recharts theme adapters (colors come from CSS vars so they follow the theme) */
+.recharts-cartesian-grid line {
+  stroke: var(--border);
+}
+.recharts-text {
+  fill: var(--ink-muted);
+}
+
+/* POS underline styles (colorblind-safe pairing) */
+.pos-underline-verb {
+  border-bottom: 2px dashed var(--pos-verb);
+}
+.pos-underline-noun {
+  border-bottom: 2px solid var(--pos-noun);
+}
+.pos-underline-pronoun {
+  border-bottom: 2px dotted var(--pos-pronoun);
+}
+.pos-underline-adjective {
+  border-bottom: 3px double var(--pos-adjective);
+}
+.pos-underline-adverb {
+  border-bottom: 3px solid var(--pos-adverb);
+}
+.pos-underline-preposition {
+  text-decoration: underline wavy var(--pos-preposition);
+  text-underline-offset: 4px;
+}
+.pos-underline-conjunction {
+  border-bottom: 2px dashed var(--pos-conjunction);
+}
+.pos-underline-determiner {
+  border-bottom: 1px solid var(--pos-determiner);
+}
+.pos-underline-other {
+  border-bottom: 1px dotted var(--pos-other);
+}
+
+/* Print layout (PDF export) — treated as a first-class surface */
+@media print {
+  @page {
+    margin: 12mm;
+  }
+  .print-hidden {
+    display: none !important;
+  }
+  .print-header {
+    display: block !important;
+  }
+  .print-expand {
+    box-shadow: none !important;
+  }
+  body {
+    background: #fff !important;
+  }
+  .print-break-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+.print-header {
+  display: none;
+}

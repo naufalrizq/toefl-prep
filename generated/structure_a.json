@@ -1,0 +1,375 @@
+[
+ {
+  "section": "structure",
+  "type": "sentence-completion",
+  "difficulty": "easy",
+  "question_text": "The list of requirements, along with the budget estimates, _____ reviewed by the board.",
+  "options": [
+   "were",
+   "was",
+   "have",
+   "has"
+  ],
+  "correct_index": 1,
+  "explanation": "B. was. Subjek utamanya 'the list' (tunggal), jadi passive-nya 'was reviewed'. Frasa 'along with the budget estimates' cuma sisipan yang nggak mengubah jumlah subjek. 'were' jamak, 'have' dan 'has' nggak cocok untuk passive 'reviewed' di sini.",
+  "highlights": {
+   "noun": [
+    "list",
+    "board"
+   ],
+   "verb": [
+    "reviewed"
+   ],
+   "preposition": [
+    "along with"
+   ]
+  }
+ },
+ {
+  "section": "structure",
+  "type": "sentence-completion",
+  "difficulty": "easy",
+  "question_text": "Each of the applicants _____ required to submit two letters of recommendation.",
+  "options": [
+   "are",
+   "were",
+   "is",
+   "have"
+  ],
+  "correct_index": 2,
+  "explanation": "C. is. 'Each of' selalu diikuti verb tunggal karena fokusnya tiap individu, bukan kelompok. 'are', 'were', dan 'have' semuanya jamak, salah untuk pola 'each of + plural noun'.",
+  "highlights": {
+   "determiner": [
+    "Each"
+   ],
+   "noun": [
+    "applicants"
+   ],
+   "verb": [
+    "required"
+   ]
+  }
+ },
+ {
+  "section": "structure",
+  "type": "sentence-completion",
+  "difficulty": "medium",
+  "question_text": "The number of students enrolling _____ grown steadily over the past decade.",
+  "options": [
+   "has",
+   "have",
+   "are",
+   "were"
+  ],
+  "correct_index": 0,
+  "explanation": "A. has. 'The number of' berarti 'jumlah' (satu angka) jadi tunggal, maka 'has grown'. Hati-hati: beda dengan 'a number of' yang artinya 'sejumlah' dan bersifat jamak. Ini jebakan klasik TOEFL.",
+  "highlights": {
+   "noun": [
+    "number",
+    "students"
+   ],
+   "verb": [
+    "grown"
+   ]
+  }
+ },
+ {
+  "section": "structure",
+  "type": "sentence-completion",
+  "difficulty": "medium",
+  "question_text": "A number of issues _____ been raised during the meeting.",
+  "options": [
+   "has",
+   "have",
+   "is",
+   "was"
+  ],
+  "correct_index": 1,
+  "explanation": "B. have. 'A number of' artinya 'sejumlah' (banyak item) jadi jamak, maka 'have been raised'. Jangan tertukar dengan 'the number of' yang tunggal. 'Of issues' di sini justru penanda jamak.",
+  "highlights": {
+   "noun": [
+    "number",
+    "issues"
+   ],
+   "verb": [
+    "raised"
+   ]
+  }
+ },
+ {
+  "section": "structure",
+  "type": "sentence-completion",
+  "difficulty": "hard",
+  "question_text": "Neither the coach nor the players _____ willing to accept the decision.",
+  "options": [
+   "was",
+   "were",
+   "is",
+   "has"
+  ],
+  "correct_index": 1,
+  "explanation": "B. were. Aturan 'neither...nor': verb mengikuti subjek TERDEKAT, yaitu 'the players' (jamak), jadi 'were willing'. 'was' dan 'is' tunggal, sedangkan 'has' nggak cocok dengan 'willing'.",
+  "highlights": {
+   "conjunction": [
+    "Neither",
+    "nor"
+   ],
+   "noun": [
+    "coach",
+    "players"
+   ],
+   "verb": [
+    "willing"
+   ]
+  }
+ },
+ {
+  "section": "structure",
+  "type": "sentence-completion",
+  "difficulty": "medium",
+  "question_text": "Rarely _____ such a dedicated team of volunteers.",
+  "options": [
+   "we have seen",
+   "have we seen",
+   "we saw",
+   "did we saw"
+  ],
+  "correct_index": 1,
+  "explanation": "B. have we seen. Keterangan negatif 'Rarely' di awal kalimat memicu INVERSION: subjek dan aux dibalik jadi 'have we seen'. Opsi A dan C tanpa inversion, D 'did we saw' salah bentuk (double past).",
+  "highlights": {
+   "adverb": [
+    "Rarely"
+   ],
+   "verb": [
+    "seen"
+   ]
+  }
+ },
+ {
+  "section": "structure",
+  "type": "sentence-completion",
+  "difficulty": "hard",
+  "question_text": "Under no circumstances _____ leave the laboratory without permission.",
+  "options": [
+   "you should",
+   "should you",
+   "you will",
+   "will you to"
+  ],
+  "correct_index": 1,
+  "explanation": "B. should you. 'Under no circumstances' adalah frasa negatif di awal, maka terjadi inversion: 'should you leave'. 'You should' benar secara grammar tapi urutannya salah karena inversion. 'Will you to' double form, salah.",
+  "highlights": {
+   "preposition": [
+    "Under"
+   ],
+   "verb": [
+    "leave"
+   ]
+  }
+ },
+ {
+  "section": "structure",
+  "type": "sentence-completion",
+  "difficulty": "hard",
+  "question_text": "Not until the final chapter _____ the reader fully understand the plot.",
+  "options": [
+   "does",
+   "do",
+   "has",
+   "will"
+  ],
+  "correct_index": 0,
+  "explanation": "A. does. Pola 'Not until X' memicu inversion: 'the reader' subjek tunggal, jadi aux 'does' ditambah verb dasar 'understand'. 'do' untuk subjek jamak, 'has' dan 'will' nggak cocok dengan 'understand'.",
+  "highlights": {
+   "conjunction": [
+    "Not until"
+   ],
+   "noun": [
+    "chapter",
+    "reader",
+    "plot"
+   ],
+   "verb": [
+    "understand"
+   ]
+  }
+ },
+ {
+  "section": "structure",
+  "type": "sentence-completion",
+  "difficulty": "hard",
+  "question_text": "No sooner had the train departed _____ the passengers realized they had left their bags behind.",
+  "options": [
+   "than",
+   "when",
+   "that",
+   "then"
+  ],
+  "correct_index": 0,
+  "explanation": "A. than. Pasangan tetap 'No sooner ... than': begitu kereta berangkat, penumpang sadar. 'when', 'that', dan 'then' bukan pasangan yang benar untuk pola ini.",
+  "highlights": {
+   "noun": [
+    "train",
+    "passengers",
+    "bags"
+   ],
+   "verb": [
+    "departed",
+    "realized",
+    "left"
+   ]
+  }
+ },
+ {
+  "section": "structure",
+  "type": "sentence-completion",
+  "difficulty": "hard",
+  "question_text": "Scarcely had she begun her speech _____ the microphone stopped working.",
+  "options": [
+   "when",
+   "than",
+   "that",
+   "so"
+  ],
+  "correct_index": 0,
+  "explanation": "A. when. Pasangan tetap 'Scarcely ... when': baru mulai pidato, mic langsung mati. 'than' dipakai untuk 'no sooner', jadi nggak bisa dipakai di sini.",
+  "highlights": {
+   "adverb": [
+    "Scarcely"
+   ],
+   "noun": [
+    "speech",
+    "microphone"
+   ],
+   "verb": [
+    "begun",
+    "stopped"
+   ]
+  }
+ },
+ {
+  "section": "structure",
+  "type": "sentence-completion",
+  "difficulty": "medium",
+  "question_text": "The committee recommended that the proposal _____ before the next meeting.",
+  "options": [
+   "be discussed",
+   "is discussed",
+   "was discussed",
+   "discussed"
+  ],
+  "correct_index": 0,
+  "explanation": "A. be discussed. Verb 'recommended that' menuntut SUBJUNCTIVE: verb bentuk dasar 'be discussed', bukan 'is' atau 'was'. Subjunctive nggak berubah bentuk meski subjeknya tunggal.",
+  "highlights": {
+   "noun": [
+    "committee",
+    "proposal",
+    "meeting"
+   ],
+   "verb": [
+    "recommended",
+    "discussed"
+   ]
+  }
+ },
+ {
+  "section": "structure",
+  "type": "sentence-completion",
+  "difficulty": "medium",
+  "question_text": "It is essential that every participant _____ arrive on time.",
+  "options": [
+   "arrives",
+   "arrive",
+   "will arrive",
+   "has arrived"
+  ],
+  "correct_index": 1,
+  "explanation": "B. arrive. Ekspresi 'It is essential that' menuntut subjunctive, jadi verb bentuk dasar 'arrive', bukan 'arrives'. Bentuk subjunctive selalu tanpa -s, ini aturan klasik TOEFL.",
+  "highlights": {
+   "adjective": [
+    "essential"
+   ],
+   "noun": [
+    "participant"
+   ],
+   "verb": [
+    "arrive"
+   ]
+  }
+ },
+ {
+  "section": "structure",
+  "type": "sentence-completion",
+  "difficulty": "hard",
+  "question_text": "The manager insisted that the report _____ completed by Friday.",
+  "options": [
+   "be",
+   "is",
+   "was",
+   "to be"
+  ],
+  "correct_index": 0,
+  "explanation": "A. be. 'Insisted that' menuntut subjunctive: 'the report be completed', bukan 'is' atau 'was completed'. Verb 'insist' termasuk kelompok kata yang selalu diikuti subjunctive bare form.",
+  "highlights": {
+   "noun": [
+    "manager",
+    "report"
+   ],
+   "verb": [
+    "insisted",
+    "completed"
+   ]
+  }
+ },
+ {
+  "section": "structure",
+  "type": "sentence-completion",
+  "difficulty": "hard",
+  "question_text": "It was not until the 1950s _____ color television became widely available.",
+  "options": [
+   "when",
+   "that",
+   "which",
+   "then"
+  ],
+  "correct_index": 1,
+  "explanation": "B. that. Pola tetap 'It was not until X that Y'. Banyak yang tergoda memilih 'when', tapi pola ini Wajib 'that'. Ini struktur favorit soal TOEFL.",
+  "highlights": {
+   "conjunction": [
+    "until"
+   ],
+   "noun": [
+    "television"
+   ],
+   "verb": [
+    "became"
+   ]
+  }
+ },
+ {
+  "section": "structure",
+  "type": "sentence-completion",
+  "difficulty": "medium",
+  "question_text": "The more you practice, _____ you become.",
+  "options": [
+   "the more fluent",
+   "more fluent",
+   "fluent",
+   "the fluent"
+  ],
+  "correct_index": 0,
+  "explanation": "A. the more fluent. Pola 'the + comparative, the + comparative' untuk hubungan sebab-akibat: makin sering latihan, makin lancar. 'More fluent' tanpa 'the' nggak valid di pola ini.",
+  "highlights": {
+   "adverb": [
+    "more"
+   ],
+   "adjective": [
+    "fluent"
+   ],
+   "verb": [
+    "practice",
+    "become"
+   ]
+  }
+ }
+]

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://toefl-prep/api/schemas/dashboard.json",
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+    "data": {
+      "type": "object",
+      "required": ["total_attempts", "series", "sections", "worst_pos"],
+      "properties": {
+        "total_attempts": { "type": "integer" },
+        "average_score": { "type": ["integer", "null"] },
+        "best_score": { "type": ["integer", "null"] },
+        "trend": { "type": ["integer", "null"] },
+        "series": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "score_pct", "started_at"],
+            "properties": {
+              "id": { "type": "integer" },
+              "score_pct": { "type": "integer" },
+              "started_at": { "type": "string" }
+            }
+          }
+        },
+        "sections": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "correct": { "type": "integer" },
+              "total": { "type": "integer" },
+              "accuracy": { "type": ["integer", "null"] }
+            }
+          }
+        },
+        "worst_pos": {
+          "type": "object",
+          "additionalProperties": { "type": "integer" }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,230 @@
+[
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "hard",
+  "question_text": "The word 'notorious' is closest in meaning to:",
+  "options": [
+   "widely known for something bad",
+   "completely unknown",
+   "highly respected",
+   "slightly famous"
+  ],
+  "correct_index": 0,
+  "explanation": "A. widely known for something bad. 'Notorious' = terkenal karena hal buruk. 'Highly respected' kebalikannya.",
+  "highlights": {
+   "adjective": [
+    "notorious"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "medium",
+  "question_text": "The word 'pragmatic' is closest in meaning to:",
+  "options": [
+   "practical",
+   "idealistic",
+   "careless",
+   "lengthy"
+  ],
+  "correct_index": 0,
+  "explanation": "A. practical. 'Pragmatic' = realistis, ngandelin hal praktis daripada teori. 'Idealistic' kebalikannya.",
+  "highlights": {
+   "adjective": [
+    "pragmatic"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "medium",
+  "question_text": "The word 'reluctant' is closest in meaning to:",
+  "options": [
+   "unwilling",
+   "eager",
+   "angry",
+   "confused"
+  ],
+  "correct_index": 0,
+  "explanation": "A. unwilling. 'Reluctant' = ogah-ogahan, enggan. 'Eager' = antusias, kebalikannya.",
+  "highlights": {
+   "adjective": [
+    "reluctant"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "hard",
+  "question_text": "The word 'resilient' is closest in meaning to:",
+  "options": [
+   "able to recover quickly",
+   "easily damaged",
+   "permanently broken",
+   "slow to react"
+  ],
+  "correct_index": 0,
+  "explanation": "A. able to recover quickly. 'Resilient' = tahan banting, cepat pulih. 'Easily damaged' kebalikannya.",
+  "highlights": {
+   "adjective": [
+    "resilient"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "hard",
+  "question_text": "The word 'scrutinize' is closest in meaning to:",
+  "options": [
+   "to examine closely",
+   "to ignore completely",
+   "to improve quickly",
+   "to repeat loudly"
+  ],
+  "correct_index": 0,
+  "explanation": "A. to examine closely. 'Scrutinize' = memeriksa dengan teliti banget. 'To ignore completely' kebalikannya.",
+  "highlights": {
+   "verb": [
+    "scrutinize"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "medium",
+  "question_text": "The word 'subsequent' is closest in meaning to:",
+  "options": [
+   "following",
+   "previous",
+   "simultaneous",
+   "unrelated"
+  ],
+  "correct_index": 0,
+  "explanation": "A. following. 'Subsequent' = yang menyusul, setelahnya. 'Previous' kebalikannya.",
+  "highlights": {
+   "adjective": [
+    "subsequent"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "easy",
+  "question_text": "The word 'sufficient' is closest in meaning to:",
+  "options": [
+   "enough",
+   "scarce",
+   "excessive",
+   "minimal"
+  ],
+  "correct_index": 0,
+  "explanation": "A. enough. 'Sufficient' = cukup. 'Scarce' = langka atau kurang.",
+  "highlights": {
+   "adjective": [
+    "sufficient"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "medium",
+  "question_text": "The word 'tedious' is closest in meaning to:",
+  "options": [
+   "boring",
+   "exciting",
+   "quick",
+   "simple"
+  ],
+  "correct_index": 0,
+  "explanation": "A. boring. 'Tedious' = membosankan dan melelahkan karena lama atau monoton. 'Exciting' kebalikannya.",
+  "highlights": {
+   "adjective": [
+    "tedious"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "hard",
+  "question_text": "The word 'undermine' is closest in meaning to:",
+  "options": [
+   "to weaken",
+   "to strengthen",
+   "to support",
+   "to explain"
+  ],
+  "correct_index": 0,
+  "explanation": "A. to weaken. 'Undermine' = melemahkan dari dalam atau merusak perlahan. 'To strengthen' kebalikannya.",
+  "highlights": {
+   "verb": [
+    "undermine"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "easy",
+  "question_text": "The word 'vital' is closest in meaning to:",
+  "options": [
+   "essential",
+   "optional",
+   "harmful",
+   "minor"
+  ],
+  "correct_index": 0,
+  "explanation": "A. essential. 'Vital' = sangat penting, nggak bisa diabaikan. 'Optional' dan 'minor' kebalikannya.",
+  "highlights": {
+   "adjective": [
+    "vital"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "medium",
+  "question_text": "The word 'candid' is closest in meaning to:",
+  "options": [
+   "frank",
+   "secretive",
+   "polite",
+   "vague"
+  ],
+  "correct_index": 0,
+  "explanation": "A. frank. 'Candid' = terus terang, jujur apa adanya. 'Secretive' kebalikannya.",
+  "highlights": {
+   "adjective": [
+    "candid"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "hard",
+  "question_text": "The word 'imperative' is closest in meaning to:",
+  "options": [
+   "absolutely necessary",
+   "slightly helpful",
+   "commonly avoided",
+   "mildly optional"
+  ],
+  "correct_index": 0,
+  "explanation": "A. absolutely necessary. 'Imperative' = sangat wajib, nggak bisa ditawar. 'Optional' kebalikannya.",
+  "highlights": {
+   "adjective": [
+    "imperative"
+   ]
+  }
+ }
+]

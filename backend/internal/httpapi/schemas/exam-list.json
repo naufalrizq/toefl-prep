@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://toefl-prep/api/schemas/exam-list.json",
+  "type": "object",
+  "required": ["data"],
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "section_filters", "shuffle", "mode", "published", "active"],
+        "properties": {
+          "id": { "type": "integer" },
+          "title": { "type": "string" },
+          "section_filters": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "required": ["parts"],
+              "properties": {
+                "parts": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["title", "type", "count"],
+                    "properties": {
+                      "title": { "type": "string" },
+                      "type": { "type": "string" },
+                      "count": { "type": "integer", "minimum": 1 }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "shuffle": { "type": "boolean" },
+          "mode": { "type": "string" },
+          "seconds_per_question": { "type": ["integer", "null"] },
+          "total_minutes": { "type": ["integer", "null"] },
+          "published": { "type": "boolean" },
+          "active": { "type": "boolean" },
+          "created_at": { "type": "string" },
+          "updated_at": { "type": "string" }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,271 @@
+[
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "hard",
+  "question_text": "The professor, together with his research assistants, were presenting the findings.",
+  "options": [
+   "The professor, together with",
+   "his research assistants,",
+   "were presenting",
+   "the findings"
+  ],
+  "correct_index": 2,
+  "explanation": "C. Subjek utamanya 'the professor' (tunggal); 'together with his research assistants' cuma sisipan, jadi 'was presenting', bukan 'were'. Jebakannya: 'assistants' jamak di tengah.",
+  "highlights": {
+   "noun": [
+    "professor",
+    "research",
+    "assistants",
+    "findings"
+   ],
+   "preposition": [
+    "together with"
+   ],
+   "verb": [
+    "presenting"
+   ]
+  }
+ },
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "medium",
+  "question_text": "She avoided to answer the difficult question during the interview.",
+  "options": [
+   "She avoided",
+   "to answer the difficult",
+   "question during",
+   "the interview"
+  ],
+  "correct_index": 1,
+  "explanation": "B. Verb 'avoid' diikuti GERUND, bukan infinitive, jadi 'avoided answering', bukan 'avoided to answer'. Beberapa verb punya pola gerund wajib.",
+  "highlights": {
+   "verb": [
+    "avoided",
+    "to answer"
+   ],
+   "noun": [
+    "question",
+    "interview"
+   ],
+   "adjective": [
+    "difficult"
+   ]
+  }
+ },
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "medium",
+  "question_text": "Despite of the bad weather, the outdoor event proceeded as planned.",
+  "options": [
+   "Despite of",
+   "the bad weather,",
+   "the outdoor event",
+   "proceeded as planned"
+  ],
+  "correct_index": 0,
+  "explanation": "A. 'Despite' nggak butuh 'of'. Yang benar 'Despite the bad weather'. Kalau mau pakai 'of', gunakan 'in spite of'.",
+  "highlights": {
+   "preposition": [
+    "Despite"
+   ],
+   "adjective": [
+    "bad"
+   ],
+   "noun": [
+    "weather",
+    "event"
+   ]
+  }
+ },
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "hard",
+  "question_text": "The manager asked that each employee submits a weekly report.",
+  "options": [
+   "The manager asked",
+   "that each employee",
+   "submits a weekly",
+   "report"
+  ],
+  "correct_index": 2,
+  "explanation": "C. 'Asked that' menuntut subjunctive, jadi verb bentuk dasar 'submit', bukan 'submits'. Subjunctive nggak menyesuaikan subjek.",
+  "highlights": {
+   "noun": [
+    "manager",
+    "employee",
+    "weekly",
+    "report"
+   ],
+   "verb": [
+    "asked",
+    "submits"
+   ]
+  }
+ },
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "medium",
+  "question_text": "If I was you, I would accept the job offer without hesitation.",
+  "options": [
+   "If I was you,",
+   "I would accept",
+   "the job offer",
+   "without hesitation"
+  ],
+  "correct_index": 0,
+  "explanation": "A. Untuk situasi hipotetis gunakan 'were', bukan 'was': 'If I were you'. Ini subjunctive untuk kondisi yang nggak nyata.",
+  "highlights": {
+   "verb": [
+    "was",
+    "would accept"
+   ],
+   "noun": [
+    "job",
+    "offer"
+   ]
+  }
+ },
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "medium",
+  "question_text": "One of the main reasons for the delay were technical issues.",
+  "options": [
+   "One of the main reasons",
+   "for the delay",
+   "were technical issues",
+   "(no error)"
+  ],
+  "correct_index": 2,
+  "explanation": "C. Subjeknya 'one' (tunggal), jadi 'was technical issues'. 'Of the main reasons' cuma modifier jamak yang jadi jebakan.",
+  "highlights": {
+   "determiner": [
+    "One"
+   ],
+   "noun": [
+    "reasons",
+    "delay",
+    "technical",
+    "issues"
+   ],
+   "verb": [
+    "were"
+   ]
+  }
+ },
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "hard",
+  "question_text": "The students, as well as the teacher, was surprised by the announcement.",
+  "options": [
+   "The students, as well as the teacher,",
+   "was surprised",
+   "by the announcement",
+   "(no error)"
+  ],
+  "correct_index": 1,
+  "explanation": "B. Subjek utamanya 'the students' (jamak), jadi 'were surprised'. 'As well as the teacher' cuma sisipan yang nggak mengubah jumlah subjek.",
+  "highlights": {
+   "noun": [
+    "students",
+    "teacher",
+    "announcement"
+   ],
+   "preposition": [
+    "as well as"
+   ],
+   "verb": [
+    "surprised"
+   ]
+  }
+ },
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "medium",
+  "question_text": "She has been working on this project since three months.",
+  "options": [
+   "She has been working",
+   "on this project",
+   "since three months",
+   "(no error)"
+  ],
+  "correct_index": 2,
+  "explanation": "C. 'Since' dipakai untuk titik waktu (since March), 'for' untuk durasi, jadi 'for three months'. Ini aturan preposisi waktu yang sering keliru.",
+  "highlights": {
+   "preposition": [
+    "since"
+   ],
+   "noun": [
+    "project",
+    "months"
+   ],
+   "verb": [
+    "working"
+   ]
+  }
+ },
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "medium",
+  "question_text": "The equipment are expensive to maintain.",
+  "options": [
+   "The equipment",
+   "are expensive",
+   "to maintain",
+   "(no error)"
+  ],
+  "correct_index": 1,
+  "explanation": "B. 'Equipment' adalah uncountable noun yang selalu tunggal, jadi 'is expensive'. Kata yang terasa jamak begini sering bikin salah.",
+  "highlights": {
+   "noun": [
+    "equipment"
+   ],
+   "verb": [
+    "are",
+    "maintain"
+   ],
+   "adjective": [
+    "expensive"
+   ]
+  }
+ },
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "hard",
+  "question_text": "No sooner had he finished the exam when he realized he had made a mistake.",
+  "options": [
+   "No sooner had he finished the exam",
+   "when he realized",
+   "he had made",
+   "a mistake"
+  ],
+  "correct_index": 1,
+  "explanation": "B. Pasangan tetap 'No sooner ... than'. 'When' nggak pernah dipakai setelah 'no sooner'; harus 'than he realized'.",
+  "highlights": {
+   "adverb": [
+    "No sooner"
+   ],
+   "conjunction": [
+    "when"
+   ],
+   "noun": [
+    "exam",
+    "mistake"
+   ],
+   "verb": [
+    "finished",
+    "realized",
+    "made"
+   ]
+  }
+ }
+]

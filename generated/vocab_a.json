@@ -1,0 +1,249 @@
+[
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "hard",
+  "question_text": "The word 'mitigate' is closest in meaning to:",
+  "options": [
+   "to worsen",
+   "to lessen",
+   "to ignore",
+   "to emphasize"
+  ],
+  "correct_index": 1,
+  "explanation": "B. to lessen. 'Mitigate' artinya mengurangi dampak buruk. 'To worsen' kebalikannya, sedangkan 'ignore' dan 'emphasize' nggak ada hubungannya dengan mengurangi.",
+  "highlights": {
+   "verb": [
+    "mitigate"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "easy",
+  "question_text": "The word 'obsolete' is closest in meaning to:",
+  "options": [
+   "modern",
+   "out of date",
+   "expensive",
+   "useful"
+  ],
+  "correct_index": 1,
+  "explanation": "B. out of date. 'Obsolete' = nggak dipakai lagi karena sudah ketinggalan zaman. 'Modern' justru kebalikannya.",
+  "highlights": {
+   "adjective": [
+    "obsolete"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "medium",
+  "question_text": "The word 'ubiquitous' is closest in meaning to:",
+  "options": [
+   "rare",
+   "found everywhere",
+   "unexpected",
+   "harmful"
+  ],
+  "correct_index": 1,
+  "explanation": "B. found everywhere. 'Ubiquitous' = ada di mana-mana. 'Rare' kebalikannya, 'unexpected' dan 'harmful' nggak nyambung.",
+  "highlights": {
+   "adjective": [
+    "ubiquitous"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "medium",
+  "question_text": "The word 'ambiguous' is closest in meaning to:",
+  "options": [
+   "clear",
+   "unclear",
+   "brief",
+   "urgent"
+  ],
+  "correct_index": 1,
+  "explanation": "B. unclear. 'Ambiguous' = maknanya ganda, bisa ditafsirkan beda-beda, jadi nggak jelas. 'Clear' kebalikannya.",
+  "highlights": {
+   "adjective": [
+    "ambiguous"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "easy",
+  "question_text": "The word 'concise' is closest in meaning to:",
+  "options": [
+   "brief",
+   "wordy",
+   "vague",
+   "lengthy"
+  ],
+  "correct_index": 0,
+  "explanation": "A. brief. 'Concise' = ringkas dan padat, nggak bertele-tele. 'Wordy' dan 'lengthy' kebalikannya.",
+  "highlights": {
+   "adjective": [
+    "concise"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "medium",
+  "question_text": "The word 'detrimental' is closest in meaning to:",
+  "options": [
+   "helpful",
+   "harmful",
+   "minor",
+   "temporary"
+  ],
+  "correct_index": 1,
+  "explanation": "B. harmful. 'Detrimental' = merugikan atau merusak. 'Helpful' kebalikannya.",
+  "highlights": {
+   "adjective": [
+    "detrimental"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "easy",
+  "question_text": "The word 'diverse' is closest in meaning to:",
+  "options": [
+   "varied",
+   "identical",
+   "limited",
+   "simple"
+  ],
+  "correct_index": 0,
+  "explanation": "A. varied. 'Diverse' = beragam, macam-macam. 'Identical' dan 'limited' kebalikannya.",
+  "highlights": {
+   "adjective": [
+    "diverse"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "easy",
+  "question_text": "The word 'eliminate' is closest in meaning to:",
+  "options": [
+   "to remove",
+   "to add",
+   "to reduce",
+   "to avoid"
+  ],
+  "correct_index": 0,
+  "explanation": "A. to remove. 'Eliminate' = menyingkirkan atau membuang sepenuhnya. 'To add' kebalikannya.",
+  "highlights": {
+   "verb": [
+    "eliminate"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "medium",
+  "question_text": "The word 'enhance' is closest in meaning to:",
+  "options": [
+   "to improve",
+   "to worsen",
+   "to replace",
+   "to delay"
+  ],
+  "correct_index": 0,
+  "explanation": "A. to improve. 'Enhance' = meningkatkan atau memperbaiki. 'To worsen' kebalikannya.",
+  "highlights": {
+   "verb": [
+    "enhance"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "medium",
+  "question_text": "The word 'feasible' is closest in meaning to:",
+  "options": [
+   "impossible",
+   "practical",
+   "expensive",
+   "urgent"
+  ],
+  "correct_index": 1,
+  "explanation": "B. practical. 'Feasible' = bisa dilaksanakan, masuk akal secara praktis. 'Impossible' kebalikannya.",
+  "highlights": {
+   "adjective": [
+    "feasible"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "easy",
+  "question_text": "The word 'genuine' is closest in meaning to:",
+  "options": [
+   "authentic",
+   "imitation",
+   "faulty",
+   "common"
+  ],
+  "correct_index": 0,
+  "explanation": "A. authentic. 'Genuine' = asli, bukan tiruan. 'Imitation' justru artinya tiruan.",
+  "highlights": {
+   "adjective": [
+    "genuine"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "hard",
+  "question_text": "The word 'hypothetical' is closest in meaning to:",
+  "options": [
+   "assumed",
+   "proven",
+   "actual",
+   "repeated"
+  ],
+  "correct_index": 0,
+  "explanation": "A. assumed. 'Hypothetical' = bersifat dugaan atau teori, belum terbukti. 'Proven' dan 'actual' kebalikannya.",
+  "highlights": {
+   "adjective": [
+    "hypothetical"
+   ]
+  }
+ },
+ {
+  "section": "vocabulary",
+  "type": "vocab-multiple-choice",
+  "difficulty": "hard",
+  "question_text": "The word 'inevitable' is closest in meaning to:",
+  "options": [
+   "unavoidable",
+   "preventable",
+   "optional",
+   "sudden"
+  ],
+  "correct_index": 0,
+  "explanation": "A. unavoidable. 'Inevitable' = nggak bisa dihindari, pasti terjadi. 'Preventable' dan 'optional' kebalikannya.",
+  "highlights": {
+   "adjective": [
+    "inevitable"
+   ]
+  }
+ }
+]

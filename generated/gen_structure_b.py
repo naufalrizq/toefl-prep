@@ -1,0 +1,114 @@
+# -*- coding: utf-8 -*-
+import json
+
+Q = [
+  {
+    "section": "structure", "type": "sentence-completion", "difficulty": "hard",
+    "question_text": "So convincing was her argument _____ everyone agreed immediately.",
+    "options": ["that", "so", "as", "because"], "correct_index": 0,
+    "explanation": "A. that. Pola 'So + adjective + was ... that': argumennya begitu meyakinkan sampai semua langsung setuju. 'because' ngasih alasan, tapi pola ini menuntut 'that'.",
+    "highlights": {"adjective": ["convincing"], "noun": ["argument"], "verb": ["agreed"]}
+  },
+  {
+    "section": "structure", "type": "sentence-completion", "difficulty": "hard",
+    "question_text": "The proposal, having been revised several times, _____ finally approved.",
+    "options": ["was", "were", "being", "to be"], "correct_index": 0,
+    "explanation": "A. was. Klausa 'having been revised' adalah reduced relative clause (sisipan). Subjek utamanya 'the proposal' (tunggal), jadi 'was finally approved'. 'were' jamak, 'being' dan 'to be' bukan verb utama.",
+    "highlights": {"noun": ["proposal"], "verb": ["revised", "approved"]}
+  },
+  {
+    "section": "structure", "type": "sentence-completion", "difficulty": "medium",
+    "question_text": "The committee members, exhausted after the long session, _____ unable to reach a decision.",
+    "options": ["was", "were", "being", "is"], "correct_index": 1,
+    "explanation": "B. were. Subjek utamanya 'the committee members' (jamak), jadi 'were unable'. Sisipan 'exhausted after the long session' nggak mengubah jumlah subjek. 'was' dan 'is' tunggal, 'being' bukan verb utama.",
+    "highlights": {"noun": ["committee", "members", "session", "decision"], "verb": ["unable"]}
+  },
+  {
+    "section": "structure", "type": "sentence-completion", "difficulty": "medium",
+    "question_text": "If she _____ earlier, she would have caught the train.",
+    "options": ["had left", "left", "leaves", "would leave"], "correct_index": 0,
+    "explanation": "A. had left. Ini conditional type 3 (masa lalu): 'If + past perfect, would have + V3'. 'had left' memberi makna 'andai tadi berangkat lebih awal'. Opsi lain nggak cocok dengan 'would have caught'.",
+    "highlights": {"verb": ["left", "caught"], "noun": ["train"]}
+  },
+  {
+    "section": "structure", "type": "sentence-completion", "difficulty": "medium",
+    "question_text": "I wish I _____ more time to prepare for the exam.",
+    "options": ["had", "have", "would have", "will have"], "correct_index": 0,
+    "explanation": "A. had. 'Wish' tentang situasi sekarang menuntut past tense: 'I wish I had more time'. 'have' untuk sekarang, 'would' dan 'will have' nggak dipakai dalam pola wish tentang kenyataan.",
+    "highlights": {"verb": ["wish", "prepare"], "noun": ["time", "exam"]}
+  },
+  {
+    "section": "structure", "type": "sentence-completion", "difficulty": "hard",
+    "question_text": "By next year, the company _____ its operations to three new cities.",
+    "options": ["will have expanded", "expands", "expanded", "has expanded"], "correct_index": 0,
+    "explanation": "A. will have expanded. 'By + waktu di masa depan' menuntut FUTURE PERFECT: 'will have expanded'. Artinya aksi selesai sebelum tahun depan. Opsi lain nggak menangkap 'by' di masa depan.",
+    "highlights": {"preposition": ["By"], "noun": ["company", "operations", "cities"], "verb": ["expanded"]}
+  },
+  {
+    "section": "structure", "type": "sentence-completion", "difficulty": "medium",
+    "question_text": "The students are accustomed to _____ in groups.",
+    "options": ["work", "working", "works", "worked"], "correct_index": 1,
+    "explanation": "B. working. 'Accustomed to' memakai 'to' sebagai PREPOSITION, jadi diikuti gerund 'working', bukan infinitive. 'work', 'works', dan 'worked' salah bentuk untuk pola ini.",
+    "highlights": {"verb": ["accustomed", "working"], "noun": ["students", "groups"]}
+  },
+  {
+    "section": "structure", "type": "sentence-completion", "difficulty": "easy",
+    "question_text": "She is capable of _____ the project on her own.",
+    "options": ["manage", "managing", "manages", "managed"], "correct_index": 1,
+    "explanation": "B. managing. Pola 'capable of + gerund': 'managing'. Kata 'of' adalah preposition, jadi verb harus -ing. 'manage', 'manages', dan 'managed' nggak bisa langsung setelah 'of'.",
+    "highlights": {"adjective": ["capable"], "preposition": ["of"], "noun": ["project"], "verb": ["managing"]}
+  },
+  {
+    "section": "structure", "type": "sentence-completion", "difficulty": "easy",
+    "question_text": "The professor prevented the students from _____ the building.",
+    "options": ["enter", "entering", "entered", "to enter"], "correct_index": 1,
+    "explanation": "B. entering. Pola 'prevent someone from + gerund': 'from entering'. Setelah preposition 'from' selalu gerund. 'enter' dan 'to enter' infinitive, 'entered' past, semuanya salah.",
+    "highlights": {"noun": ["professor", "students", "building"], "verb": ["prevented", "entering"]}
+  },
+  {
+    "section": "structure", "type": "sentence-completion", "difficulty": "easy",
+    "question_text": "The lecture was both informative _____ entertaining.",
+    "options": ["and", "or", "but", "yet"], "correct_index": 0,
+    "explanation": "A. and. Pasangan tetap 'both ... and': kuliahnya informatif dan menghibur. 'or' untuk pilihan, 'but' dan 'yet' untuk kontras, nggak cocok dengan 'both'.",
+    "highlights": {"conjunction": ["both", "and"], "adjective": ["informative", "entertaining"], "noun": ["lecture"]}
+  },
+  {
+    "section": "structure", "type": "sentence-completion", "difficulty": "medium",
+    "question_text": "The results were not only disappointing _____ unexpected.",
+    "options": ["but also", "and", "or", "so"], "correct_index": 0,
+    "explanation": "A. but also. Pasangan tetap 'not only ... but also'. Hasilnya mengecewakan dan juga tak terduga. 'and', 'or', dan 'so' nggak membentuk pasangan yang benar dengan 'not only'.",
+    "highlights": {"conjunction": ["not only", "but also"], "adjective": ["disappointing", "unexpected"], "noun": ["results"]}
+  },
+  {
+    "section": "structure", "type": "sentence-completion", "difficulty": "medium",
+    "question_text": "He decided to spend the money _____ to save it for later.",
+    "options": ["rather than", "more than", "instead", "than"], "correct_index": 0,
+    "explanation": "A. rather than. 'Rather than + bare infinitive' artinya 'daripada': lebih baik menghabiskan uang daripada menabung. 'instead' butuh 'of' (instead of saving), 'than' sendirian nggak lengkap.",
+    "highlights": {"verb": ["decided", "spend", "save"], "noun": ["money"]}
+  },
+  {
+    "section": "structure", "type": "sentence-completion", "difficulty": "hard",
+    "question_text": "Despite _____ very tired, she finished the race.",
+    "options": ["being", "to be", "be", "was"], "correct_index": 0,
+    "explanation": "A. being. 'Despite' adalah preposition, jadi diikuti gerund 'being', bukan infinitive. 'was' butuh subjek sendiri, 'be' dan 'to be' nggak cocok setelah preposition.",
+    "highlights": {"preposition": ["Despite"], "verb": ["being", "finished"], "noun": ["race"]}
+  },
+  {
+    "section": "structure", "type": "sentence-completion", "difficulty": "hard",
+    "question_text": "The mountains, whose peaks _____ covered in snow, looked magnificent.",
+    "options": ["were", "was", "is", "being"], "correct_index": 0,
+    "explanation": "A. were. 'Whose peaks' (puncak-puncaknya, jamak) menjadi subjek klausa sisipan, jadi 'were covered'. 'was' dan 'is' tunggal, 'being' bukan verb utama. Sisipan relatif nggak mengubah subjek kalimat utama.",
+    "highlights": {"pronoun": ["whose"], "noun": ["mountains", "peaks", "snow"], "verb": ["covered", "looked"]}
+  },
+  {
+    "section": "structure", "type": "sentence-completion", "difficulty": "easy",
+    "question_text": "_____ the heavy rain, the outdoor concert continued as planned.",
+    "options": ["Despite", "Although", "Because", "Unless"], "correct_index": 0,
+    "explanation": "A. Despite. 'Despite + noun phrase' ('the heavy rain') artinya meskipun hujan deras. 'Although' harus diikuti klausa penuh (subjek + verb), 'Because' memberi alasan yang justru kebalikan, 'Unless' nggak masuk akal.",
+    "highlights": {"preposition": ["Despite"], "adjective": ["heavy"], "noun": ["rain", "concert"]}
+  },
+]
+
+with open("/home/nrizq/Documents/Codes/toefl-prep/generated/structure_b.json", "w") as f:
+    json.dump(Q, f, ensure_ascii=False, indent=1)
+print("structure_b:", len(Q))

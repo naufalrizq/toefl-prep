@@ -1,0 +1,162 @@
+[
+ {
+  "section": "reading",
+  "type": "reading-comprehension",
+  "difficulty": "easy",
+  "passage": "The history of coffee begins in the highlands of Ethiopia, where legend says a goat herder named Kaldi noticed his goats became unusually energetic after eating berries from a certain tree. The berries were roasted, ground, and brewed, and the drink spread across the Arabian Peninsula. By the 1500s, coffeehouses had appeared in cities such as Mecca and Cairo, serving as places for conversation, music, and business. Coffee reached Europe in the seventeenth century and quickly became a popular beverage. Some rulers distrusted coffeehouses, fearing they encouraged political discussion. Nevertheless, the drink's popularity continued to grow, and coffee cultivation expanded to colonies in Asia and the Americas.",
+  "question_text": "What is the main idea of the passage?",
+  "options": [
+   "Coffee spread from Ethiopia to become a popular drink around the world.",
+   "Kaldi was the first person to grow coffee in Africa.",
+   "Coffeehouses were forbidden in every country in Europe.",
+   "Coffee cultivation began in the Americas in the 1500s."
+  ],
+  "correct_index": 0,
+  "explanation": "A. Ide utamanya perjalanan kopi: dari Ethiopia menyebar ke Jazirah Arab, Eropa, sampai Amerika. B, C, dan D terlalu spesifik atau bertentangan dengan isi teks, misalnya Kaldi menemukan bukan menanam, dan budidaya di Amerika terjadi belakangan.",
+  "highlights": {}
+ },
+ {
+  "section": "reading",
+  "type": "reading-comprehension",
+  "difficulty": "easy",
+  "passage": "The history of coffee begins in the highlands of Ethiopia, where legend says a goat herder named Kaldi noticed his goats became unusually energetic after eating berries from a certain tree. The berries were roasted, ground, and brewed, and the drink spread across the Arabian Peninsula. By the 1500s, coffeehouses had appeared in cities such as Mecca and Cairo, serving as places for conversation, music, and business. Coffee reached Europe in the seventeenth century and quickly became a popular beverage. Some rulers distrusted coffeehouses, fearing they encouraged political discussion. Nevertheless, the drink's popularity continued to grow, and coffee cultivation expanded to colonies in Asia and the Americas.",
+  "question_text": "According to the passage, what did Kaldi notice about his goats?",
+  "options": [
+   "They became unusually energetic after eating certain berries.",
+   "They refused to eat the berries from the tree.",
+   "They slept longer after drinking the brew.",
+   "They led him to a coffeehouse in Mecca."
+  ],
+  "correct_index": 0,
+  "explanation": "A. Paragraf pertama jelas bilang kambingnya jadi 'unusually energetic' setelah makan buah beri. B, C, dan D nggak ada di teks.",
+  "highlights": {}
+ },
+ {
+  "section": "reading",
+  "type": "reading-comprehension",
+  "difficulty": "medium",
+  "passage": "The history of coffee begins in the highlands of Ethiopia, where legend says a goat herder named Kaldi noticed his goats became unusually energetic after eating berries from a certain tree. The berries were roasted, ground, and brewed, and the drink spread across the Arabian Peninsula. By the 1500s, coffeehouses had appeared in cities such as Mecca and Cairo, serving as places for conversation, music, and business. Coffee reached Europe in the seventeenth century and quickly became a popular beverage. Some rulers distrusted coffeehouses, fearing they encouraged political discussion. Nevertheless, the drink's popularity continued to grow, and coffee cultivation expanded to colonies in Asia and the Americas.",
+  "question_text": "Why did some rulers distrust coffeehouses?",
+  "options": [
+   "They feared the places encouraged political discussion.",
+   "The coffee served there was too expensive.",
+   "Coffeehouses attracted too many farmers.",
+   "The buildings were in poor condition."
+  ],
+  "correct_index": 0,
+  "explanation": "A. Teks bilang 'Some rulers distrusted coffeehouses, fearing they encouraged political discussion'. B, C, dan D nggak pernah disebut.",
+  "highlights": {}
+ },
+ {
+  "section": "reading",
+  "type": "reading-comprehension",
+  "difficulty": "easy",
+  "passage": "The history of coffee begins in the highlands of Ethiopia, where legend says a goat herder named Kaldi noticed his goats became unusually energetic after eating berries from a certain tree. The berries were roasted, ground, and brewed, and the drink spread across the Arabian Peninsula. By the 1500s, coffeehouses had appeared in cities such as Mecca and Cairo, serving as places for conversation, music, and business. Coffee reached Europe in the seventeenth century and quickly became a popular beverage. Some rulers distrusted coffeehouses, fearing they encouraged political discussion. Nevertheless, the drink's popularity continued to grow, and coffee cultivation expanded to colonies in Asia and the Americas.",
+  "question_text": "The word 'beverage' in the passage is closest in meaning to:",
+  "options": [
+   "a type of food",
+   "a drink",
+   "a container",
+   "a ceremony"
+  ],
+  "correct_index": 1,
+  "explanation": "B. a drink. 'Beverage' = minuman. Kopi disebut 'popular beverage' karena menjadi minuman favorit. 'Food', 'container', dan 'ceremony' nggak nyambung.",
+  "highlights": {}
+ },
+ {
+  "section": "reading",
+  "type": "reading-comprehension",
+  "difficulty": "hard",
+  "passage": "The history of coffee begins in the highlands of Ethiopia, where legend says a goat herder named Kaldi noticed his goats became unusually energetic after eating berries from a certain tree. The berries were roasted, ground, and brewed, and the drink spread across the Arabian Peninsula. By the 1500s, coffeehouses had appeared in cities such as Mecca and Cairo, serving as places for conversation, music, and business. Coffee reached Europe in the seventeenth century and quickly became a popular beverage. Some rulers distrusted coffeehouses, fearing they encouraged political discussion. Nevertheless, the drink's popularity continued to grow, and coffee cultivation expanded to colonies in Asia and the Americas.",
+  "question_text": "It can be inferred from the passage that coffee cultivation spread to colonies because ...",
+  "options": [
+   "coffee was popular and therefore profitable to grow.",
+   "coffeehouses were banned in Europe.",
+   "goats ate all the coffee berries.",
+   "the Arabian Peninsula had no farmland."
+  ],
+  "correct_index": 0,
+  "explanation": "A. Kalau kopi populer, otomatis permintaannya besar, jadi wajar dibudidayakan di koloni. Itu kesimpulan logis dari 'popularity continued to grow'. B, C, dan D nggak didukung teks.",
+  "highlights": {}
+ },
+ {
+  "section": "reading",
+  "type": "reading-comprehension",
+  "difficulty": "easy",
+  "passage": "The Great Barrier Reef, stretching more than 2,300 kilometers along the coast of northeastern Australia, is the largest coral reef system on Earth. It is home to thousands of species of fish, mollusks, turtles, and seabirds. The reef is built by tiny animals called coral polyps, which produce a hard skeleton of calcium carbonate. These skeletons accumulate over centuries to form the reef structure. Coral polyps live in a partnership with microscopic algae that provide them with energy through photosynthesis. When ocean temperatures rise, the algae may leave the coral, causing it to lose its color and turn white, a process known as bleaching. Although coral can recover, severe or repeated bleaching can kill entire sections of the reef. Scientists warn that climate change is the greatest threat to the reef's future.",
+  "question_text": "What is the main idea of the passage?",
+  "options": [
+   "The Great Barrier Reef is threatened mainly by rising ocean temperatures.",
+   "Coral reefs are built only by seabirds and turtles.",
+   "The Great Barrier Reef is the smallest reef system in the world.",
+   "Scientists have discovered how to stop all coral bleaching."
+  ],
+  "correct_index": 0,
+  "explanation": "A. Teks menjelaskan apa itu terumbu karang, lalu inti di akhir: kenaikan suhu dan perubahan iklim jadi ancaman terbesar. B, C, dan D bertentangan dengan teks.",
+  "highlights": {}
+ },
+ {
+  "section": "reading",
+  "type": "reading-comprehension",
+  "difficulty": "medium",
+  "passage": "The Great Barrier Reef, stretching more than 2,300 kilometers along the coast of northeastern Australia, is the largest coral reef system on Earth. It is home to thousands of species of fish, mollusks, turtles, and seabirds. The reef is built by tiny animals called coral polyps, which produce a hard skeleton of calcium carbonate. These skeletons accumulate over centuries to form the reef structure. Coral polyps live in a partnership with microscopic algae that provide them with energy through photosynthesis. When ocean temperatures rise, the algae may leave the coral, causing it to lose its color and turn white, a process known as bleaching. Although coral can recover, severe or repeated bleaching can kill entire sections of the reef. Scientists warn that climate change is the greatest threat to the reef's future.",
+  "question_text": "What causes coral to turn white?",
+  "options": [
+   "The algae leave the coral when temperatures rise.",
+   "The coral produces extra calcium carbonate.",
+   "Fish remove the algae from the reef.",
+   "The reef moves to warmer water."
+  ],
+  "correct_index": 0,
+  "explanation": "A. Prosesnya: suhu naik, alga pergi, karang kehilangan warna jadi putih (bleaching). B, C, dan D nggak sesuai dengan penjelasan di teks.",
+  "highlights": {}
+ },
+ {
+  "section": "reading",
+  "type": "reading-comprehension",
+  "difficulty": "medium",
+  "passage": "The Great Barrier Reef, stretching more than 2,300 kilometers along the coast of northeastern Australia, is the largest coral reef system on Earth. It is home to thousands of species of fish, mollusks, turtles, and seabirds. The reef is built by tiny animals called coral polyps, which produce a hard skeleton of calcium carbonate. These skeletons accumulate over centuries to form the reef structure. Coral polyps live in a partnership with microscopic algae that provide them with energy through photosynthesis. When ocean temperatures rise, the algae may leave the coral, causing it to lose its color and turn white, a process known as bleaching. Although coral can recover, severe or repeated bleaching can kill entire sections of the reef. Scientists warn that climate change is the greatest threat to the reef's future.",
+  "question_text": "The word 'accumulate' in the passage is closest in meaning to:",
+  "options": [
+   "to build up over time",
+   "to disappear quickly",
+   "to break apart suddenly",
+   "to move from place to place"
+  ],
+  "correct_index": 0,
+  "explanation": "A. to build up over time. 'Accumulate' = menumpuk atau terbentuk sedikit demi sedikit selama berabad-abad ('over centuries'). B, C, dan D kebalikan atau beda makna.",
+  "highlights": {}
+ },
+ {
+  "section": "reading",
+  "type": "reading-comprehension",
+  "difficulty": "easy",
+  "passage": "The Great Barrier Reef, stretching more than 2,300 kilometers along the coast of northeastern Australia, is the largest coral reef system on Earth. It is home to thousands of species of fish, mollusks, turtles, and seabirds. The reef is built by tiny animals called coral polyps, which produce a hard skeleton of calcium carbonate. These skeletons accumulate over centuries to form the reef structure. Coral polyps live in a partnership with microscopic algae that provide them with energy through photosynthesis. When ocean temperatures rise, the algae may leave the coral, causing it to lose its color and turn white, a process known as bleaching. Although coral can recover, severe or repeated bleaching can kill entire sections of the reef. Scientists warn that climate change is the greatest threat to the reef's future.",
+  "question_text": "According to the passage, what do coral polyps produce?",
+  "options": [
+   "a hard skeleton of calcium carbonate",
+   "a supply of microscopic algae",
+   "large amounts of fresh water",
+   "a thick layer of sand"
+  ],
+  "correct_index": 0,
+  "explanation": "A. Teks bilang polip menghasilkan 'a hard skeleton of calcium carbonate'. Alga justru penyedia energi untuk polip, bukan produksi polip. B, C, dan D salah.",
+  "highlights": {}
+ },
+ {
+  "section": "reading",
+  "type": "reading-comprehension",
+  "difficulty": "hard",
+  "passage": "The Great Barrier Reef, stretching more than 2,300 kilometers along the coast of northeastern Australia, is the largest coral reef system on Earth. It is home to thousands of species of fish, mollusks, turtles, and seabirds. The reef is built by tiny animals called coral polyps, which produce a hard skeleton of calcium carbonate. These skeletons accumulate over centuries to form the reef structure. Coral polyps live in a partnership with microscopic algae that provide them with energy through photosynthesis. When ocean temperatures rise, the algae may leave the coral, causing it to lose its color and turn white, a process known as bleaching. Although coral can recover, severe or repeated bleaching can kill entire sections of the reef. Scientists warn that climate change is the greatest threat to the reef's future.",
+  "question_text": "The passage suggests that the reef's future depends mainly on ...",
+  "options": [
+   "controlling the rise in ocean temperatures.",
+   "reducing the number of seabirds.",
+   "removing the calcium carbonate skeletons.",
+   "increasing tourism along the coast."
+  ],
+  "correct_index": 0,
+  "explanation": "A. Kalau ancaman terbesar adalah perubahan iklim, masa depan terumbu bergantung pada mengendalikan kenaikan suhu. Itu kesimpulan logis dari kalimat penutup. Opsi lain nggak nyambung.",
+  "highlights": {}
+ }
+]

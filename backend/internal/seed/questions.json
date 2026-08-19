@@ -1,0 +1,369 @@
+[
+  {
+    "section": "structure",
+    "type": "sentence-completion",
+    "difficulty": "easy",
+    "question_text": "The committee _____ decided to postpone the meeting until next week.",
+    "options": [
+      "have",
+      "has",
+      "are",
+      "were"
+    ],
+    "correct_index": 1,
+    "explanation": "Jawaban yang benar adalah 'has'. 'Committee' adalah collective noun yang di sini merujuk pada kelompok sebagai satu kesatuan, sehingga memerlukan kata kerja tunggal. 'have', 'are', dan 'were' semuanya bentuk jamak dan tidak cocok dengan subjek tunggal.",
+    "highlights": {
+      "noun": [
+        "committee"
+      ],
+      "verb": [
+        "decided"
+      ]
+    }
+  },
+  {
+    "section": "structure",
+    "type": "sentence-completion",
+    "difficulty": "medium",
+    "question_text": "Neither the manager nor his assistants _____ willing to accept the proposal.",
+    "options": [
+      "is",
+      "are",
+      "was",
+      "has been"
+    ],
+    "correct_index": 1,
+    "explanation": "Pada konstruksi 'neither ... nor', kata kerja mengikuti subjek yang paling dekat dengan kata kerja, yaitu 'assistants' (jamak), sehingga 'are' adalah pilihan yang benar. 'is' dan 'was' untuk subjek tunggal, sedangkan 'has been' tidak cocok dengan 'willing'.",
+    "highlights": {
+      "conjunction": [
+        "nor"
+      ],
+      "noun": [
+        "manager",
+        "assistants"
+      ]
+    }
+  },
+  {
+    "section": "structure",
+    "type": "sentence-completion",
+    "difficulty": "medium",
+    "question_text": "The board of directors _____ scheduled a meeting for Friday morning.",
+    "options": [
+      "has",
+      "have",
+      "are",
+      "is"
+    ],
+    "correct_index": 0,
+    "explanation": "'Board' adalah collective noun yang merujuk pada satu kesatuan, sehingga membutuhkan kata kerja tunggal 'has scheduled'. 'have' dan 'are' untuk subjek jamak, sedangkan 'is scheduled' tidak tepat karena teks sudah menyertakan 'scheduled'.",
+    "highlights": {
+      "noun": [
+        "board"
+      ],
+      "verb": [
+        "scheduled"
+      ]
+    }
+  },
+  {
+    "section": "structure",
+    "type": "sentence-completion",
+    "difficulty": "easy",
+    "question_text": "Each of the students _____ required to submit the assignment by noon.",
+    "options": [
+      "are",
+      "is",
+      "were",
+      "be"
+    ],
+    "correct_index": 1,
+    "explanation": "Setelah 'each of', subjek gramatikalnya adalah 'each' yang bersifat tunggal, sehingga kata kerja yang benar adalah 'is'. 'are' dan 'were' untuk subjek jamak, sedangkan 'be' tidak berfungsi sebagai predikat di sini.",
+    "highlights": {
+      "determiner": [
+        "Each"
+      ],
+      "noun": [
+        "students"
+      ]
+    }
+  },
+  {
+    "section": "vocabulary",
+    "type": "vocab-multiple-choice",
+    "difficulty": "medium",
+    "question_text": "The word 'mitigate' is closest in meaning to:",
+    "options": [
+      "to worsen",
+      "to lessen",
+      "to ignore",
+      "to emphasize"
+    ],
+    "correct_index": 1,
+    "explanation": "'Mitigate' berarti 'mengurangi atau meringankan' dampak buruk, sehingga padanan terdekatnya adalah 'to lessen'. 'To worsen' justru kebalikannya, sedangkan 'to ignore' dan 'to emphasize' tidak berkaitan dengan pengurangan dampak.",
+    "highlights": {
+      "verb": [
+        "mitigate"
+      ]
+    }
+  },
+  {
+    "section": "vocabulary",
+    "type": "vocab-multiple-choice",
+    "difficulty": "medium",
+    "question_text": "The term 'ubiquitous' is best defined as:",
+    "options": [
+      "rare and hard to find",
+      "present everywhere",
+      "clearly visible",
+      "difficult to understand"
+    ],
+    "correct_index": 1,
+    "explanation": "'Ubiquitous' berarti 'ada di mana-mana', sehingga padanan yang tepat adalah 'present everywhere'. 'Rare and hard to find' adalah kebalikannya, dan dua pilihan lainnya tidak menggambarkan makna tersebut.",
+    "highlights": {
+      "adjective": [
+        "ubiquitous"
+      ]
+    }
+  },
+  {
+    "section": "vocabulary",
+    "type": "vocab-multiple-choice",
+    "difficulty": "easy",
+    "question_text": "The word 'benevolent' is closest in meaning to:",
+    "options": [
+      "hostile",
+      "generous",
+      "careless",
+      "suspicious"
+    ],
+    "correct_index": 1,
+    "explanation": "'Benevolent' berarti 'baik hati atau dermawan', sehingga padanan terdekatnya adalah 'generous'. 'Hostile' (bermusuhan) berlawanan arti, sedangkan 'careless' dan 'suspicious' tidak berhubungan.",
+    "highlights": {
+      "adjective": [
+        "benevolent"
+      ]
+    }
+  },
+  {
+    "section": "vocabulary",
+    "type": "vocab-multiple-choice",
+    "difficulty": "hard",
+    "question_text": "Her argument was so _____ that everyone agreed immediately.",
+    "options": [
+      "redundant",
+      "compelling",
+      "ambiguous",
+      "obscure"
+    ],
+    "correct_index": 1,
+    "explanation": "Kalimat tersebut menjelaskan akibat 'everyone agreed immediately' (semua langsung setuju), yang hanya masuk akal jika argumennya 'compelling' (meyakinkan). 'Redundant', 'ambiguous', dan 'obscure' justru cenderung membuat orang tidak setuju.",
+    "highlights": {
+      "verb": [
+        "agreed"
+      ],
+      "adverb": [
+        "immediately"
+      ]
+    }
+  },
+  {
+    "section": "structure",
+    "type": "sentence-completion",
+    "difficulty": "medium",
+    "question_text": "The proposal was rejected by the committee because _____ conflicted with company policy.",
+    "options": [
+      "it",
+      "they",
+      "them",
+      "its"
+    ],
+    "correct_index": 0,
+    "explanation": "Jawaban yang benar adalah 'it'. Pronoun 'it' merujuk pada 'the proposal' (tunggal, benda mati), sehingga cocok sebagai subjek 'conflicted'. 'they' dan 'them' bersifat jamak, sedangkan 'its' adalah bentuk kepemilikan dan tidak bisa menjadi subjek kalimat.",
+    "highlights": {
+      "preposition": [
+        "by"
+      ],
+      "noun": [
+        "proposal",
+        "committee"
+      ],
+      "verb": [
+        "rejected"
+      ]
+    }
+  },
+  {
+    "section": "structure",
+    "type": "sentence-completion",
+    "difficulty": "easy",
+    "question_text": "Neither of the candidates has told us where _____ plans to hold the rally.",
+    "options": [
+      "they",
+      "he or she",
+      "it",
+      "them"
+    ],
+    "correct_index": 1,
+    "explanation": "Setelah 'neither of', subjek gramatikalnya tunggal, sehingga pronoun yang benar adalah 'he or she' (atau 'his or her'). 'they' dan 'them' bersifat jamak, sedangkan 'it' tidak cocok untuk merujuk kandidat (orang).",
+    "highlights": {
+      "pronoun": [
+        "us"
+      ],
+      "determiner": [
+        "Neither"
+      ],
+      "noun": [
+        "candidates",
+        "rally"
+      ]
+    }
+  },
+  {
+    "section": "reading",
+    "type": "reading-comprehension",
+    "difficulty": "easy",
+    "passage": "The printing press, developed by Johannes Gutenberg around 1440, transformed the way knowledge spread across Europe. Before its invention, books were copied by hand, which made them scarce and expensive. The press allowed texts to be produced quickly and in large quantities, lowering the cost of books and enabling more people to learn to read. Although the press changed many industries, its deepest impact was on education and the exchange of ideas.",
+    "question_text": "What is the main idea of the passage?",
+    "options": [
+      "The printing press made books cheaper and widened access to learning.",
+      "Gutenberg invented the printing press to sell books for profit.",
+      "Books were copied by hand because the press was unreliable.",
+      "The press only affected the publishing industry in Europe."
+    ],
+    "correct_index": 0,
+    "explanation": "Ide utamanya di kalimat pembuka dan penutup: mesin cetak membuat buku murah dan memperluas akses belajar. 'Made cheaper' dan 'widened access to learning' mencerminkan dua dampak yang ditekankan di paragraf.",
+    "highlights": {}
+  },
+  {
+    "section": "reading",
+    "type": "reading-comprehension",
+    "difficulty": "medium",
+    "passage": "The printing press, developed by Johannes Gutenberg around 1440, transformed the way knowledge spread across Europe. Before its invention, books were copied by hand, which made them scarce and expensive. The press allowed texts to be produced quickly and in large quantities, lowering the cost of books and enabling more people to learn to read. Although the press changed many industries, its deepest impact was on education and the exchange of ideas.",
+    "question_text": "According to the passage, what was the direct result of cheaper books?",
+    "options": [
+      "The exchange of ideas stopped across Europe.",
+      "More people were able to learn to read.",
+      "Gutenberg stopped making money from printing.",
+      "Books became scarce and expensive."
+    ],
+    "correct_index": 1,
+    "explanation": "Kalimat 'lowering the cost of books and enabling more people to learn to read' — biaya murah langsung membuka peluang lebih banyak orang belajar membaca. Opsi D justru kebalikan (keadaan sebelum mesin cetak).",
+    "highlights": {}
+  },
+  {
+    "section": "reading",
+    "type": "reading-comprehension",
+    "difficulty": "medium",
+    "passage": "Many migratory birds navigate using the Earth's magnetic field. Researchers discovered that birds rely on small iron-rich particles in their beaks, which may act like a built-in compass. However, this sense works best on clear days. On cloudy days, the birds appear to switch to landmarks such as rivers and coastlines, suggesting that the magnetic sense is not their only navigational tool.",
+    "question_text": "Why do birds rely on landmarks on cloudy days?",
+    "options": [
+      "Landmarks provide more accurate routes than rivers.",
+      "Their magnetic compass works poorly without clear skies.",
+      "Iron particles in their beaks disappear in the rain.",
+      "Clear days make it harder to see the coastline."
+    ],
+    "correct_index": 1,
+    "explanation": "Kalimat 'this sense works best on clear days' lalu 'on cloudy days ... switch to landmarks' — indra magnetik menurun saat langit mendung, jadi burung beralih ke penanda darat. Opsi A dan C tidak disebut, D kebalikan dari kenyataan.",
+    "highlights": {}
+  },
+  {
+    "section": "reading",
+    "type": "reading-comprehension",
+    "difficulty": "hard",
+    "passage": "Many migratory birds navigate using the Earth's magnetic field. Researchers discovered that birds rely on small iron-rich particles in their beaks, which may act like a built-in compass. However, this sense works best on clear days. On cloudy days, the birds appear to switch to landmarks such as rivers and coastlines, suggesting that the magnetic sense is not their only navigational tool.",
+    "question_text": "The phrase 'act like a built-in compass' in the passage most nearly means that the particles…",
+    "options": [
+      "replace the need for a sense of direction entirely",
+      "help birds detect direction using magnetism",
+      "are stored in rivers and coastlines",
+      "produce heat that guides the birds south"
+    ],
+    "correct_index": 1,
+    "explanation": "Metafora 'compass' berarti alat penunjuk arah. Partikel besi membantu burung mendeteksi arah lewat medan magnet — bukan menggantikan semua indra (A terlalu absolut), bukan benda di luar (C), bukan penghasil panas (D).",
+    "highlights": {}
+  },
+  {
+    "section": "grammar_adv",
+    "type": "error-identification",
+    "difficulty": "medium",
+    "question_text": "Neither the manager nor the employees was satisfied with the new policy.",
+    "options": [
+      "Neither the manager",
+      "nor the employees was",
+      "satisfied with",
+      "the new policy"
+    ],
+    "correct_index": 1,
+    "explanation": "Kesalahan di B. Aturan 'neither ... nor': kata kerja mengikuti subjek terdekat, yaitu 'the employees' (jamak) → harus 'were satisfied', bukan 'was'. Subjek jamak + was = inkonsisten agreement.",
+    "highlights": {
+      "verb": [
+        "was satisfied"
+      ],
+      "conjunction": [
+        "Neither",
+        "nor"
+      ]
+    }
+  },
+  {
+    "section": "grammar_adv",
+    "type": "error-identification",
+    "difficulty": "medium",
+    "question_text": "She enjoys reading, to swim, and hiking on the weekends.",
+    "options": [
+      "She enjoys",
+      "reading, to swim,",
+      "and hiking",
+      "on the weekends"
+    ],
+    "correct_index": 1,
+    "explanation": "Kesalahan di B: paralelisme. Rangkaian harus sejajar bentuknya — 'reading' dan 'hiking' (gerund), jadi yang ketiga harus 'swimming', bukan 'to swim'. Campur gerund dan infinitive memecah struktur.",
+    "highlights": {
+      "verb": [
+        "reading",
+        "to swim",
+        "hiking"
+      ]
+    }
+  },
+  {
+    "section": "grammar_adv",
+    "type": "error-identification",
+    "difficulty": "easy",
+    "question_text": "Him and I went to the conference together last Friday.",
+    "options": [
+      "Him and I",
+      "went to",
+      "the conference together",
+      "last Friday"
+    ],
+    "correct_index": 0,
+    "explanation": "Kesalahan di A: kasus pronoun subjek. Karena 'Him and I' berfungsi sebagai subjek, bentuknya harus 'He and I'. 'Him' adalah objek pronoun dan tidak boleh jadi subjek.",
+    "highlights": {
+      "pronoun": [
+        "Him and I"
+      ]
+    }
+  },
+  {
+    "section": "grammar_adv",
+    "type": "error-identification",
+    "difficulty": "hard",
+    "question_text": "By the time we arrived at the theater, the movie has already started.",
+    "options": [
+      "By the time we arrived",
+      "at the theater",
+      "the movie has already started",
+      "(no error)"
+    ],
+    "correct_index": 2,
+    "explanation": "Kesalahan di C: sequence of tenses. 'Arrived' (past) terjadi sebelum 'started', jadi aksi lebih awal harus pakai past perfect → 'had already started'. 'Has' (present perfect) tidak cocok dengan konteks masa lalu.",
+    "highlights": {
+      "verb": [
+        "arrived",
+        "has already started"
+      ]
+    }
+  }
+]

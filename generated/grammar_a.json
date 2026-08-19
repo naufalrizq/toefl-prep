@@ -1,0 +1,255 @@
+[
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "medium",
+  "question_text": "Neither the director nor the committee members was informed about the change.",
+  "options": [
+   "Neither the director",
+   "nor the committee members was",
+   "informed about",
+   "the change"
+  ],
+  "correct_index": 1,
+  "explanation": "B. Aturan 'neither...nor': verb mengikuti subjek terdekat, yaitu 'the committee members' (jamak), jadi 'were informed', bukan 'was'. Agreement jamak-tunggal ini jebakan khas TOEFL.",
+  "highlights": {
+   "conjunction": [
+    "Neither",
+    "nor"
+   ],
+   "noun": [
+    "director",
+    "committee",
+    "members",
+    "change"
+   ],
+   "verb": [
+    "informed"
+   ]
+  }
+ },
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "medium",
+  "question_text": "The quality of the products have improved considerably this year.",
+  "options": [
+   "The quality",
+   "of the products have",
+   "improved considerably",
+   "this year"
+  ],
+  "correct_index": 1,
+  "explanation": "B. Subjek utamanya 'the quality' (tunggal); 'of the products' cuma modifier, jadi 'has improved', bukan 'have'. Jebakannya: 'products' jamak bikin kelihatan harus 'have'.",
+  "highlights": {
+   "noun": [
+    "quality",
+    "products",
+    "year"
+   ],
+   "verb": [
+    "improved"
+   ]
+  }
+ },
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "medium",
+  "question_text": "She enjoys reading, to swim, and hiking on the weekends.",
+  "options": [
+   "She enjoys",
+   "reading, to swim,",
+   "and hiking",
+   "on the weekends"
+  ],
+  "correct_index": 1,
+  "explanation": "B. Paralelisme: 'reading' dan 'hiking' gerund, jadi yang tengah harus 'swimming', bukan 'to swim'. Rangkaian harus sejajar bentuknya.",
+  "highlights": {
+   "verb": [
+    "enjoys",
+    "reading",
+    "to swim",
+    "hiking"
+   ]
+  }
+ },
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "hard",
+  "question_text": "The training teaches employees to communicate clearly, working in teams, and manage conflicts.",
+  "options": [
+   "The training teaches employees",
+   "to communicate clearly,",
+   "working in teams,",
+   "and manage conflicts"
+  ],
+  "correct_index": 2,
+  "explanation": "C. Paralelisme: 'to communicate' dan 'to manage' infinitive, jadi yang tengah harus 'to work in teams', bukan 'working'. Ketiganya harus sejajar.",
+  "highlights": {
+   "noun": [
+    "training",
+    "employees",
+    "teams",
+    "conflicts"
+   ],
+   "verb": [
+    "communicate",
+    "working",
+    "manage"
+   ]
+  }
+ },
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "easy",
+  "question_text": "Her and I are responsible for organizing the event.",
+  "options": [
+   "Her and I",
+   "are responsible",
+   "for organizing",
+   "the event"
+  ],
+  "correct_index": 0,
+  "explanation": "A. 'Her and I' berfungsi sebagai subjek, jadi harus bentuk subjek 'She and I'. 'Her' adalah objek pronoun dan nggak bisa jadi subjek.",
+  "highlights": {
+   "pronoun": [
+    "Her",
+    "I"
+   ],
+   "verb": [
+    "responsible",
+    "organizing"
+   ],
+   "noun": [
+    "event"
+   ]
+  }
+ },
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "hard",
+  "question_text": "Every participant must bring their own laptop to the training.",
+  "options": [
+   "Every participant must bring",
+   "their own laptop",
+   "to the training",
+   "(no error)"
+  ],
+  "correct_index": 1,
+  "explanation": "B. Aturan klasik TOEFL: 'every participant' tunggal, jadi pronoun harus 'his or her', bukan 'their'. Ini jebakan pronoun agreement yang masih sering diujikan.",
+  "highlights": {
+   "determiner": [
+    "Every"
+   ],
+   "noun": [
+    "participant",
+    "laptop",
+    "training"
+   ],
+   "pronoun": [
+    "their"
+   ]
+  }
+ },
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "hard",
+  "question_text": "By the time we arrived at the theater, the play has already begun.",
+  "options": [
+   "By the time we arrived",
+   "at the theater",
+   "the play has already begun",
+   "(no error)"
+  ],
+  "correct_index": 2,
+  "explanation": "C. Sequence of tenses: 'arrived' (past) dan 'begun' terjadi lebih dulu, jadi harus past perfect 'had already begun'. 'Has' (present perfect) nggak cocok dengan konteks masa lalu.",
+  "highlights": {
+   "noun": [
+    "time",
+    "theater",
+    "play"
+   ],
+   "verb": [
+    "arrived",
+    "begun"
+   ]
+  }
+ },
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "medium",
+  "question_text": "She said that she will call me as soon as she arrives.",
+  "options": [
+   "She said that",
+   "she will call me",
+   "as soon as she arrives",
+   "(no error)"
+  ],
+  "correct_index": 1,
+  "explanation": "B. Reported speech: kalau pembicaranya lampau ('said'), verb-nya mundur jadi 'would call', bukan 'will call'. Ini aturan tense agreement dalam kalimat tidak langsung.",
+  "highlights": {
+   "verb": [
+    "said",
+    "will call",
+    "arrives"
+   ]
+  }
+ },
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "easy",
+  "question_text": "The new model is more better than the previous one.",
+  "options": [
+   "The new model",
+   "is more better",
+   "than the previous one",
+   "(no error)"
+  ],
+  "correct_index": 1,
+  "explanation": "B. Double comparative: 'better' sudah bentuk comparative, nggak boleh ditambah 'more'. Jadi 'is better', bukan 'is more better'.",
+  "highlights": {
+   "adjective": [
+    "better"
+   ],
+   "noun": [
+    "model"
+   ],
+   "pronoun": [
+    "one"
+   ]
+  }
+ },
+ {
+  "section": "grammar_adv",
+  "type": "error-identification",
+  "difficulty": "medium",
+  "question_text": "He is the most friendliest person I have ever met.",
+  "options": [
+   "He is the most",
+   "friendliest person",
+   "I have ever met",
+   "(no error)"
+  ],
+  "correct_index": 0,
+  "explanation": "A. Superlative ganda: 'friendliest' sudah bentuk superlative, nggak perlu 'the most'. Cukup 'the friendliest person'.",
+  "highlights": {
+   "adjective": [
+    "most",
+    "friendliest"
+   ],
+   "noun": [
+    "person"
+   ],
+   "verb": [
+    "met"
+   ]
+  }
+ }
+]
