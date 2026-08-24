@@ -21,7 +21,7 @@ import (
 
 func main() {
 	n := flag.Int("n", 10, "number of student users to create")
-	password := flag.String("password", "123", "password for every created user")
+	password := flag.String("password", "student1234", "password for every created user (must match k6 PASSWORD)")
 	flag.Parse()
 
 	url := os.Getenv("DATABASE_URL")
