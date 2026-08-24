@@ -4,3 +4,5 @@ dist/
 *.log
 frontend/dist/
 backend/bin/
+.vercel/
+.railway/
