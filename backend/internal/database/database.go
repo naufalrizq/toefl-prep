@@ -36,7 +36,7 @@ func Migrate(ctx context.Context, url string) error {
 	defer pool.Close()
 
 	sqlDB := stdlib.OpenDBFromPool(pool)
-	defer sqlDB.Close()
+	defer func() { _ = sqlDB.Close() }()
 
 	goose.SetBaseFS(migrations.FS)
 	if err := goose.SetDialect("postgres"); err != nil {

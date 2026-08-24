@@ -23,7 +23,7 @@ func (r *Repo) InsertAttempt(ctx context.Context, a *Attempt, items []*AttemptIt
 	if err != nil {
 		return 0, err
 	}
-	defer tx.Rollback(ctx)
+	defer func() { _ = tx.Rollback(ctx) }()
 
 	var id int64
 	if err := tx.QueryRow(ctx, `
@@ -48,8 +48,6 @@ func (r *Repo) InsertAttempt(ctx context.Context, a *Attempt, items []*AttemptIt
 	}
 	return id, nil
 }
-
-const attemptCols = `id, user_id, exam_template_id, mode, started_at, finished_at, status, score_pct, summary`
 
 func scanAttempt(row pgx.Row, title string) (*Attempt, error) {
 	var (

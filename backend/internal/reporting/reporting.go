@@ -128,14 +128,6 @@ func (s *Service) Dashboard(ctx context.Context, userID int64) (*Stats, error) {
 	return stats, nil
 }
 
-func avgScore(as []*attempts.Attempt) int {
-	total := 0
-	for _, a := range as {
-		total += *a.ScorePct
-	}
-	return total / len(as)
-}
-
 func intOf(v any) int {
 	switch n := v.(type) {
 	case int:
