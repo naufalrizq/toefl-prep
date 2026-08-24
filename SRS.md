@@ -1,6 +1,6 @@
 # TOEFL Prep — Software Requirements Specification (SRS)
 
-**Status:** Draft v1.0
+**Status:** Draft v1.1 (updated 2026-08-24: 4 sections + passage + parts-based templates + endpoint drift sync)
 **Date:** 2026-08-19
 **Related docs:** [PRD.md](PRD.md) · [architecture.md](architecture.md) · [design.md](design.md) · [rules.md](rules.md)
 
@@ -63,21 +63,21 @@ flowchart LR
 
 ### 3.2 Question bank (FR-2) — admin
 
-- FR-2.1 Admin MAY create a question: section, type, question_text, options (4), correct_index, explanation (in **Bahasa Indonesia**), difficulty, and optional highlight_regions.
+- FR-2.1 Admin MAY create a question: section, type, question_text, optional passage, options (4), correct_index, explanation (in **Bahasa Indonesia**), difficulty, and optional highlight_regions.
 - FR-2.2 Admin MAY edit any field of an existing question.
 - FR-2.3 Admin MAY soft-delete (deactivate) a question. Deleted questions MUST NOT appear in new exams but MUST remain resolvable for historical attempts.
 - FR-2.4 Admin MAY list/filter questions by section, type, difficulty, active status, and text search. Pagination required (default 20/page).
-- FR-2.5 Validation: `question_text` non-empty ≤ 1000 chars; exactly 4 options, each non-empty ≤ 200 chars; `correct_index` in 0–3; `explanation` non-empty ≤ 2000 chars; highlight regions MUST fit within `question_text` bounds (non-overlapping with identical `pos` allowed; overlapping regions of different `pos` disallowed).
+- FR-2.5 Validation: `question_text` non-empty ≤ 1000 chars; exactly 4 options, each non-empty ≤ 200 chars; `correct_index` in 0–3; `explanation` non-empty ≤ 2000 chars; highlight regions MUST fit within `question_text` bounds (non-overlapping with identical `pos` allowed; overlapping regions of different `pos` disallowed); `section` ∈ {structure, vocabulary, reading, grammar_adv}; `type` ∈ {sentence-completion, vocab-multiple-choice, reading-comprehension, error-identification}; each section has a default/inferred type (structure→sentence-completion, vocabulary→vocab-multiple-choice, reading→reading-comprehension, grammar_adv→error-identification); `reading-comprehension` items REQUIRE a non-empty `passage`; `passage` ≤ 4000 chars; Structure items require a blank (`_____`) in `question_text`.
 - FR-2.6 Highlight region schema (JSONB): `{ "start": int, "end": int, "pos": string, "label": string? }`. `pos` ∈ {verb, noun, pronoun, adjective, adverb, preposition, conjunction, determiner, other}. `start < end`, `start ≥ 0`, `end ≤ len(question_text)`.
 - FR-2.7 Seed command/endpoint MAY load `seed/*.json` and upsert questions idempotently (skip if identical by stable key).
 - FR-2.8 **AI question import** (admin): POST `/questions/import` accepts pasted AI JSON output (produced **outside the app** per `prompts/question-generator.md`) — a single object or an array. The backend parses each item, validates per FR-2.5/FR-2.6, and normalizes AI-provided highlight phrases into offsets (see §6.5). Valid items are returned as draft previews for the admin to review and save; invalid items are returned with per-item reasons and do not block valid ones. Nothing is stored until the admin explicitly saves a draft. The import endpoint is admin-only and does not call any LLM.
 
 ### 3.3 Exam templates (FR-3) — admin
 
-- FR-3.1 Admin MAY create an exam template: `title`, `section_filters` (e.g. `{structure: 10, vocabulary: 5}`), `shuffle` (default true), `mode` ∈ `per_question` | `overall` | `both`, `seconds_per_question` (per-question mode, default 60), `total_minutes` (overall mode, default 15), `published` (default false).
+- FR-3.1 Admin MAY create an exam template: `title`, `section_filters` (**parts-based**: `{section: {parts: [{title, type, count}]}}`, e.g. `{"structure": {"parts": [{"title": "Part 1", "type": "sentence-completion", "count": 8}]}}`), `shuffle` (default true), `mode` ∈ `per_question` | `overall` | `both`, `seconds_per_question` (per-question mode, default 60), `total_minutes` (overall mode, default 15), `published` (default false).
 - FR-3.2 Admin MAY edit, duplicate, delete (soft), publish/unpublish templates.
-- FR-3.3 Only `published` templates are visible/startable by the student.
-- FR-3.4 Template validation: at least one section with `count ≥ 1`; bank MUST contain enough active questions per section to satisfy the template; if `mode = overall`, `total_minutes ≥ 1`; if `mode = per_question`, `seconds_per_question ≥ 10`.
+- FR-3.3 Only `published` templates are visible/startable by the student. The student-facing exam list and the admin list are served by the same role-aware `GET /exams` endpoint.
+- FR-3.4 Template validation: at least one section; every part MUST have a valid section/type pairing and `count ≥ 1`; bank MUST contain enough active questions per part's section+type to satisfy the template; if `mode = overall`, `total_minutes ≥ 1`; if `mode = per_question`, `seconds_per_question ≥ 10`.
 - FR-3.5 The student SHALL be able to pick per-question or overall mode when the template `mode = both`.
 
 ### 3.4 Quiz taking (FR-4)
@@ -85,6 +85,7 @@ flowchart LR
 - FR-4.1 POST `/attempts` with exam template id (+ optional chosen mode) creates an attempt: snapshots selected questions (per section_filters, shuffled) into attempt items, records `started_at`.
 - FR-4.2 GET `/attempts/:id/questions` returns the attempt questions **without** correct answers or explanations (one per item).
 - FR-4.3 PUT `/attempts/:id/answers/:item_id` records the selected option (index or null) per question item. Client MAY send answers incrementally; server upserts.
+- FR-4.3a PUT `/attempts/:id/flag/:item_id` toggles the `flagged` marker on an attempt item (used by the overall-mode palette).
 - FR-4.4 POST `/attempts/:id/submit` finalizes the attempt, computes the report server-side, sets `finished_at`, and returns the result summary. Idempotent: submitting twice returns the same report.
 - FR-4.5 **Per-question mode:** selecting an option immediately advances (client behavior); a per-question timeout (client) marks that item answered as null and advances. The server does NOT auto-advance; the client drives it, the server stores the final snapshot at submit.
 - FR-4.6 **Overall mode:** student MAY jump between questions, flag items, and see answered/unanswered. Client enforces a confirmation dialog before submit.
@@ -154,7 +155,7 @@ erDiagram
     exam_templates {
         bigint id PK
         varchar title
-        jsonb section_filters "{structure: n, vocabulary: m}"
+        jsonb section_filters "{structure: {parts: [{title, type, count}]}}"
         boolean shuffle
         varchar mode "per_question|overall|both"
         int seconds_per_question
@@ -166,9 +167,10 @@ erDiagram
     }
     questions {
         bigint id PK
-        varchar section "structure|vocabulary"
-        varchar type
+        varchar section "structure|vocabulary|reading|grammar_adv"
+        varchar type "sentence-completion|vocab-multiple-choice|reading-comprehension|error-identification"
         text question_text
+        text passage "nullable; required for reading-comprehension"
         jsonb options "[a,b,c,d]"
         int correct_index
         text explanation
@@ -283,10 +285,9 @@ Base: `/api/v1`. Envelope (see rules.md §6):
 | GET | `/questions/:id` | admin | Read question |
 | PUT | `/questions/:id` | admin | Update question |
 | DELETE | `/questions/:id` | admin | Soft-delete |
-| POST | `/questions/seed` | admin | Load seed files |
+| POST | `/questions/seed` → implemented as `POST /seed` | admin | Load seed files (idempotent upsert) |
 | POST | `/questions/import` | admin | Validate + import pasted AI JSON (drafts) |
-| GET | `/exams` | student | List published templates |
-| GET | `/exams/admin` | admin | List all templates |
+| GET | `/exams` | any (role-aware) | List templates — students see published only; admins see all |
 | POST | `/exams` | admin | Create template |
 | PUT | `/exams/:id` | admin | Update template |
 | DELETE | `/exams/:id` | admin | Soft-delete template |
@@ -294,6 +295,7 @@ Base: `/api/v1`. Envelope (see rules.md §6):
 | POST | `/attempts` | student | Start attempt (template + mode) |
 | GET | `/attempts/:id/questions` | student | Attempt questions (no answers) |
 | PUT | `/attempts/:id/answers/:item_id` | student | Record answer |
+| PUT | `/attempts/:id/flag/:item_id` | student | Toggle flag on attempt item |
 | POST | `/attempts/:id/submit` | student | Finalize + grade |
 | GET | `/attempts/:id/review` | student | Full review data |
 | GET | `/attempts` | student | Own attempt list |

@@ -1,6 +1,6 @@
 # TOEFL Prep — Product Requirements Document (PRD)
 
-**Status:** Draft v1.0
+**Status:** Draft v1.1 (updated 2026-08-24: Reading + Advanced Grammar pulled into v1 scope)
 **Date:** 2026-08-19
 **Owner:** Personal project (single owner = student + admin)
 **Related docs:** [SRS.md](SRS.md) · [architecture.md](architecture.md) · [design.md](design.md) · [rules.md](rules.md)
@@ -27,7 +27,7 @@ The product is deliberately narrow: **timed quizzes → review → export → tr
 
 ### Goals (v1)
 
-- G1. Take TOEFL-style quizzes (Structure & Written Expression + Vocabulary) with a timer.
+- G1. Take TOEFL-style quizzes (Structure & Written Expression, Vocabulary, Reading Comprehension, Advanced Grammar) with a timer.
 - G2. Support **two configurable quiz modes**: per-question countdown (auto-next) and whole-exam countdown (navigable question set).
 - G3. Score every attempt and show an instant result summary.
 - G4. Provide a **review screen** where question text is **highlighted by part-of-speech** (verb, noun, pronoun, etc.) alongside the explanation, the chosen answer, and the correct answer.
@@ -39,11 +39,15 @@ The product is deliberately narrow: **timed quizzes → review → export → tr
 ### Non-Goals (explicitly out of scope for v1)
 
 - Multi-user / multi-student support, leaderboards, sharing.
-- TOEFL Listening section (audio), Reading Comprehension passages, Speaking.
+- TOEFL Listening section (audio), Speaking.
 - Content delivery (lessons, video, courses) — the app is a *quiz* tool only.
 - Payments, onboarding flows, email notifications, password reset.
 - Spaced-repetition scheduling, streak gamification, badges.
 - Mobile native apps (responsive web only).
+
+> **Scope note (v1.1):** Reading Comprehension (single passage + questions) and an
+> Advanced Grammar / error-identification section were pulled into v1 during build
+> (migration `006_sections_parts.sql`). Full multi-question passage *sets* remain parked.
 
 ---
 
@@ -76,7 +80,7 @@ Because both roles belong to the same person, the admin surface must be a **low-
 
 - As the admin, I can log in with my seeded account.
 - As the admin, I can create, edit, delete, and soft-disable questions.
-- As the admin, I can specify section (Structure / Vocabulary), question type, question text, options, correct option, difficulty, and explanation.
+- As the admin, I can specify section (Structure / Vocabulary / Reading / Advanced Grammar), question type, question text, an optional passage (required for Reading), options, correct option, difficulty, and explanation.
 - As the admin, I can mark **highlight regions** on the question text (select a span of text → assign a part-of-speech) that will appear in the student review.
 - As the admin, I can compose an exam: title, quiz mode (per-question and/or overall), time limits, section mix, and how many questions to draw.
 - As the admin, I can publish/unpublish exams so only published exams are visible to the student.
@@ -92,9 +96,10 @@ Two seeded accounts (`student@…`, `admin@…`) with password login. Server iss
 ### F2 — Question bank (admin)
 CRUD over questions. Each question has:
 
-- `section`: `structure` | `vocabulary`
-- `type`: `sentence-completion` (Structure) | `vocab-multiple-choice` (Vocabulary) *(extensible)*
-- `question_text`: the sentence to complete (Structure) or the prompt (Vocabulary)
+- `section`: `structure` | `vocabulary` | `reading` | `grammar_adv`
+- `type`: `sentence-completion` (Structure) | `vocab-multiple-choice` (Vocabulary) | `reading-comprehension` (Reading) | `error-identification` (Advanced Grammar) *(extensible)*
+- `question_text`: the sentence to complete (Structure), the prompt (Vocabulary), the question about the passage (Reading), or the sentence containing the error (Advanced Grammar)
+- `passage`: optional reading passage; **required** for `reading-comprehension` items, ≤ 4000 chars
 - `options`: 4 options (A–D)
 - `correct_index`: 0–3
 - `explanation`: **in Bahasa Indonesia** — why the answer is correct
@@ -113,7 +118,16 @@ AI question generation happens **outside the app** — the admin runs the prompt
 - Invalid output is rejected with a clear message; the admin can regenerate outside the app and re-import.
 
 ### F3 — Exam templates
-An exam template defines: `title`, `section_filters`, `question_count` (per section), `shuffle` (default true), `mode`: `per_question` | `overall` | `both` (student can pick), `seconds_per_question` (per-question mode), `total_minutes` (overall mode), `published`.
+An exam template defines: `title`, `section_filters`, `shuffle` (default true), `mode`: `per_question` | `overall` | `both` (student can pick), `seconds_per_question` (per-question mode), `total_minutes` (overall mode), `published`.
+
+`section_filters` is **parts-based** — each section lists ordered parts, each part pinning a question type and count:
+
+```json
+{
+  "structure": { "parts": [{ "title": "Part 1", "type": "sentence-completion", "count": 8 }] },
+  "vocabulary": { "parts": [{ "title": "Part 1", "type": "vocab-multiple-choice", "count": 4 }] }
+}
+```
 
 Starting an attempt **snapshots** the selected questions into the attempt so later edits to the bank never corrupt a finished exam.
 
@@ -153,11 +167,11 @@ Client-side PDF from a print-optimized review layout (`window.print()` → Save 
 ## 6. MVP Scope vs Future
 
 ### MVP (v1)
-F1–F8 with: two sections (Structure + Vocabulary), four-option questions, two quiz modes, PDF via print, AI question import (F2a).
+F1–F8 with: four sections (Structure + Vocabulary + Reading + Advanced Grammar), four-option questions (with optional passages for Reading), two quiz modes, PDF via print, AI question import (F2a). *(Scope expanded from the original two-section plan during build — see §2 scope note.)*
 
 ### Future candidates (explicitly parked)
 - Listening section (needs audio hosting/CDN + different review UX).
-- Reading Comprehension (passage text + multi-question sets).
+- Full multi-question passage sets (one passage → several questions).
 - Multiple student accounts, sharing, leaderboards.
 - Spaced repetition ("which questions do I keep getting wrong?").
 - Automated question import from file upload.
@@ -198,7 +212,7 @@ Personal metrics, reviewed weekly by the owner:
 - **Exam template** — admin-defined configuration for picking questions and timing; publishing makes it startable.
 - **Highlight region** — a character span on `question_text` tagged with a part-of-speech category, shown during review.
 - **POS category** — part-of-speech label (verb, noun, pronoun, adjective, adverb, preposition, conjunction, determiner, other).
-- **Section** — TOEFL section represented in the app: Structure & Written Expression, Vocabulary.
+- **Section** — TOEFL section represented in the app: Structure & Written Expression (`structure`), Vocabulary (`vocabulary`), Reading Comprehension (`reading`), Advanced Grammar / Error Identification (`grammar_adv`).
 - **Seed** — loading the initial question bank from committed JSON files into the database.
 - **AI draft** — a question produced by the LLM (Claude/Gemini/ChatGPT) **outside the app** as structured JSON; imported into the app, validated, and only stored after the admin saves.
 - **Highlight normalization** — converting AI-provided POS phrases into validated character-offset regions on `question_text` during import.

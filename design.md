@@ -354,7 +354,10 @@ collective noun 'committee'."
 ┌──────────────────────────────────────────────┐
 │ Admin · Exams                     [+ New]    │
 │ Title            Mock TOEFL A  [Published ✓] │
-│ Sections  Structure [10]  Vocabulary [5]    │
+│ Sections (parts)                             │
+│  Structure  · sentence-completion      [10]  │
+│  Vocabulary · vocab-multiple-choice     [5]  │
+│  [+ Add part]                                │
 │ Mode       ( ) Per-question  ( ) Overall     │
 │            (•) Both (student chooses)        │
 │ Per-question time   60 s   | Total time 15 m │
@@ -364,7 +367,8 @@ collective noun 'committee'."
 └──────────────────────────────────────────────┘
 ```
 
-- Live "bank check" — confirms enough active questions per section before publish.
+- Live "bank check" — confirms enough active questions per part's section+type before publish.
+- Each section is composed of ordered **parts** (`{title, type, count}`); type is constrained to the section's item types (structure→sentence-completion, vocabulary→vocab-multiple-choice, reading→reading-comprehension, grammar_adv→error-identification).
 - Publish toggle is one clear switch.
 
 ---
